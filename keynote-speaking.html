@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keynote Speaking - Dr. Danny Gentry</title>
+    <meta name="description" content="Book Dr. Danny Gentry for keynote presentations on educational leadership, teacher wellness, and the future of public education.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.7;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-dark) 100%);
+            color: var(--cream);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--light-tan);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Content Section */
+        .content {
+            padding: 6rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .content h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .content h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--primary-brown);
+        }
+        
+        .content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .content li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--primary-brown);
+        }
+        
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .topic-card {
+            background-color: var(--cream);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-terracotta);
+        }
+        
+        .topic-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+        }
+        
+        .topic-card p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--cream);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--primary-brown);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-terracotta);
+            color: white;
+            box-shadow: 0 4px 15px rgba(200, 92, 60, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background-color: #B54D2F;
+            box-shadow: 0 6px 25px rgba(200, 92, 60, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content h2 {
+                font-size: 2rem;
+            }
+            
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="index.html#speaking">Speaking</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-icon">🎤</div>
+        <h1>Keynote Speaking</h1>
+        <p class="hero-subtitle">
+            Inspiring presentations that challenge thinking, spark conversations, 
+            and drive meaningful change in education.
+        </p>
+    </section>
+
+    <!-- Content -->
+    <section class="content">
+        <h2>Transform Your Event with Powerful Keynotes</h2>
+        <p>
+            With over three decades of experience in educational leadership and a proven track record 
+            of driving systemic change, Dr. Danny Gentry delivers keynote presentations that resonate 
+            long after the event ends. His unique blend of frontline experience, research-backed insights, 
+            and compelling storytelling makes him a sought-after speaker for conferences, professional 
+            development days, and educational summits.
+        </p>
+        
+        <h2>Speaking Topics</h2>
+        
+        <div class="topic-grid">
+            <div class="topic-card">
+                <h4>Educational Leadership in Crisis</h4>
+                <p>
+                    Drawing from "The Collapse," explore how leaders can navigate unprecedented 
+                    challenges while maintaining focus on what truly matters: student learning and 
+                    teacher wellbeing.
+                </p>
+            </div>
+            
+            <div class="topic-card">
+                <h4>Teacher Retention & Wellness</h4>
+                <p>
+                    Practical strategies for building school cultures where educators thrive, 
+                    backed by research and real-world success stories from decades of leadership.
+                </p>
+            </div>
+            
+            <div class="topic-card">
+                <h4>The Future of Public Education</h4>
+                <p>
+                    A honest look at where we are, how we got here, and what it will take to 
+                    rebuild trust and effectiveness in America's public schools.
+                </p>
+            </div>
+            
+            <div class="topic-card">
+                <h4>Leadership Through Storytelling</h4>
+                <p>
+                    How narrative craft and authentic communication can transform school culture, 
+                    build community, and inspire lasting change.
+                </p>
+            </div>
+        </div>
+        
+        <h2>What You Can Expect</h2>
+        <p>
+            Dr. Gentry's presentations are characterized by:
+        </p>
+        <ul>
+            <li><strong>Authenticity:</strong> Real stories from 30+ years in the trenches of public education</li>
+            <li><strong>Research-Based Insights:</strong> Evidence-backed strategies grounded in practical application</li>
+            <li><strong>Engaging Delivery:</strong> A natural storyteller who connects with audiences of all sizes</li>
+            <li><strong>Actionable Takeaways:</strong> Concrete strategies participants can implement immediately</li>
+            <li><strong>Customized Content:</strong> Presentations tailored to your audience's specific needs and challenges</li>
+        </ul>
+        
+        <h2>Ideal For</h2>
+        <ul>
+            <li>State and national education conferences</li>
+            <li>District-wide professional development days</li>
+            <li>Leadership summits and retreats</li>
+            <li>University education programs</li>
+            <li>School board and community forums</li>
+            <li>Teacher appreciation events</li>
+        </ul>
+        
+        <h2>Presentation Formats</h2>
+        <h3>Full Keynote (45-75 minutes)</h3>
+        <p>
+            A comprehensive presentation with time for Q&A, perfect for opening or closing 
+            conferences and major events.
+        </p>
+        
+        <h3>Breakout Session (60-90 minutes)</h3>
+        <p>
+            An interactive deep-dive into specific topics with extended discussion and 
+            practical application.
+        </p>
+        
+        <h3>Half-Day Workshop (3-4 hours)</h3>
+        <p>
+            Intensive training combining presentation, collaborative work, and strategic 
+            planning time for leadership teams.
+        </p>
+        
+        <h3>Virtual Presentations</h3>
+        <p>
+            Engaging online presentations adapted for virtual audiences with interactive 
+            elements and digital resources.
+        </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Book Dr. Gentry?</h2>
+        <p>
+            Let's discuss how a keynote presentation can inspire and energize your audience. 
+            Reach out today to check availability and discuss your event needs.
+        </p>
+        <a href="index.html#contact" class="btn btn-primary">Get In Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved. | <a href="index.html">Return to Home</a></p>
+    </footer>
+</body>
+</html>

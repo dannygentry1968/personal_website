@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Consulting - Dr. Danny Gentry</title>
+    <meta name="description" content="Partner with Dr. Danny Gentry for school consulting services in leadership development, culture building, and strategic planning.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.7;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--accent-sage) 0%, var(--primary-brown) 100%);
+            color: var(--cream);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--light-tan);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Content Section */
+        .content {
+            padding: 6rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .content h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .content h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--primary-brown);
+        }
+        
+        .content ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .content li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--primary-brown);
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .service-card {
+            background-color: var(--cream);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-sage);
+        }
+        
+        .service-card h4 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+        }
+        
+        .service-card p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        .highlight-box {
+            background-color: var(--cream);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-terracotta);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--cream);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            color: var(--primary-brown);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent-terracotta);
+            color: white;
+            box-shadow: 0 4px 15px rgba(200, 92, 60, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background-color: #B54D2F;
+            box-shadow: 0 6px 25px rgba(200, 92, 60, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content h2 {
+                font-size: 2rem;
+            }
+            
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="index.html#speaking">Speaking</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-icon">🏫</div>
+        <h1>School Consulting</h1>
+        <p class="hero-subtitle">
+            Transform your school culture, strengthen your leadership team, 
+            and create lasting positive change.
+        </p>
+    </section>
+
+    <!-- Content -->
+    <section class="content">
+        <h2>Partner with an Experienced Educational Leader</h2>
+        <p>
+            After more than 20 years as a principal across elementary, middle, and high school settings, 
+            Dr. Danny Gentry brings proven expertise in building positive school cultures, developing 
+            effective leadership teams, and implementing sustainable improvement strategies. His consulting 
+            work is grounded in real-world experience and tailored to the unique challenges your school faces.
+        </p>
+        
+        <h2>Consulting Services</h2>
+        
+        <div class="service-grid">
+            <div class="service-card">
+                <h4>Leadership Development</h4>
+                <p>
+                    Coaching and training for principals, assistant principals, and emerging leaders. 
+                    Build the skills and confidence needed to lead with clarity and purpose.
+                </p>
+            </div>
+            
+            <div class="service-card">
+                <h4>School Culture Assessment & Building</h4>
+                <p>
+                    Comprehensive evaluation of your school's climate followed by actionable strategies 
+                    to create a culture where students and staff thrive.
+                </p>
+            </div>
+            
+            <div class="service-card">
+                <h4>Strategic Planning</h4>
+                <p>
+                    Facilitate your team through the development of clear, achievable goals aligned 
+                    with your school's mission and community needs.
+                </p>
+            </div>
+            
+            <div class="service-card">
+                <h4>Professional Development Design</h4>
+                <p>
+                    Create meaningful professional learning experiences that actually change practice 
+                    and improve outcomes for students.
+                </p>
+            </div>
+            
+            <div class="service-card">
+                <h4>Teacher Retention Strategies</h4>
+                <p>
+                    Address the root causes of teacher burnout and build systems that support 
+                    educator wellness and longevity.
+                </p>
+            </div>
+            
+            <div class="service-card">
+                <h4>Change Management</h4>
+                <p>
+                    Navigate major transitions, implement new initiatives effectively, and build 
+                    buy-in across your school community.
+                </p>
+            </div>
+        </div>
+        
+        <h2>The Consulting Process</h2>
+        
+        <h3>1. Discovery & Assessment</h3>
+        <p>
+            We begin with comprehensive listening: surveys, interviews, focus groups, and data analysis 
+            to understand your school's unique context, strengths, and challenges.
+        </p>
+        
+        <h3>2. Strategic Planning</h3>
+        <p>
+            Together, we develop a customized action plan with clear goals, measurable outcomes, and 
+            realistic timelines that respect your staff's capacity and your school's resources.
+        </p>
+        
+        <h3>3. Implementation Support</h3>
+        <p>
+            Ongoing coaching, training, and troubleshooting as you put plans into action. This isn't 
+            about handing off a report—it's about partnering with you through the work.
+        </p>
+        
+        <h3>4. Progress Monitoring & Adjustment</h3>
+        <p>
+            Regular check-ins, data review, and course corrections ensure your initiatives stay on 
+            track and achieve intended outcomes.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>Why Schools Choose Dr. Gentry</h3>
+            <ul>
+                <li><strong>Practical Experience:</strong> 30+ years in K-12 education, including 20+ as a principal</li>
+                <li><strong>Research-Informed:</strong> Doctorate in Educational Leadership with focus on organizational change</li>
+                <li><strong>Authentic Partnership:</strong> A collaborative approach that respects your expertise and context</li>
+                <li><strong>Results-Oriented:</strong> Focus on measurable improvements that matter for students and staff</li>
+                <li><strong>Sustainable Solutions:</strong> Building capacity within your team for long-term success</li>
+            </ul>
+        </div>
+        
+        <h2>Engagement Options</h2>
+        
+        <h3>One-Time Consultation</h3>
+        <p>
+            A focused engagement to address a specific challenge or opportunity. Includes assessment, 
+            recommendations, and action planning. Ideal for schools with internal capacity to implement.
+        </p>
+        
+        <h3>Semester Partnership</h3>
+        <p>
+            Extended support over 4-6 months with regular on-site visits, virtual check-ins, and ongoing 
+            coaching. Perfect for implementing major initiatives or organizational changes.
+        </p>
+        
+        <h3>Year-Long Partnership</h3>
+        <p>
+            Comprehensive support throughout a full school year, including summer planning, 
+            implementation support, and evaluation. Best for schools undergoing significant transformation.
+        </p>
+        
+        <h3>Leadership Coaching</h3>
+        <p>
+            One-on-one executive coaching for principals and district leaders. Virtual or in-person 
+            sessions focused on your specific leadership challenges and growth goals.
+        </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Strengthen Your School?</h2>
+        <p>
+            Let's start a conversation about your school's needs and how consulting services 
+            can support your vision for improvement.
+        </p>
+        <a href="index.html#contact" class="btn btn-primary">Schedule a Consultation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved. | <a href="index.html">Return to Home</a></p>
+    </footer>
+</body>
+</html>
