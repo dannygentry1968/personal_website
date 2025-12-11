@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Understanding Yourself - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">August 04, 2025</div>
+            <h1 class="article-title">The Power of Understanding Yourself</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>One of the things I have been thinking about lately is that we are fundamentally in the PEOPLE business.</p>
+
+            <p>Our job is to help other people learn, and in doing so, gain access to a happier and more fulfilled life.  We are attempting to do this work out in the REAL world where people (and by people, I mean all the adults we come in contact with in our jobs AND our students) have all sorts of motives and pathologies. Some of which are productive and uplifting, while others are destructive and wrong.  Understanding and dealing with people in a way that promotes psychological health and well-being, is a precursor to ANY success we might have academically.  Our work is to help people RISE!</p>
+
+            <p>I've recently been on sort of a quest for self-discovery, and so I took an online personality test at a website called: Truity.com   They offer a variety of tests, so I chose the BIG 5 Personality Test.  It tests your personality in 5 different domains:  Openness, Conscientiousness, Agreeableness, Extraversion, and Neuroticism.  These five traits have been well-researched and their various combinations have been found to form the basis of our personalities.  I shared MY results in the graphic above.  It turns out that I am sort of weird, I scored high in both openness and conscientiousness.  Most people are strong in one or the other, but not usually both.  It placed me in the category of Empathetic Idealist.  At first I thought that it meant that I feel sorry for people, but don't really have any practical solutions for them.  However, when I read the detailed report that comes with the test, I found out that this type of personality actually is a pretty good one to have for this type of job, because openness and conscientiousness together can help people feel comfortable working together to achieve results in a high-stress environment.  I'm glad I took this test, and will be doing more soon.  I encourage you to take a look at this site, and maybe take a test on your own.</p>
+
+            <p>Steven Covey advised us to "Seek first to understand and then to be understood." This is good advice, and it goes even deeper for educators.  As educators, we need to understand ourselves first before we can understand others.  We need to know WHY we do the things we do, and what is really at the heart of what drives and motivates us.  Cliche' answers like "I just love kids and want to see them succeed" just doesn't cut it.  It has to be deeper than that, and you know it.</p>
+
+            <p>You need to know  your story, and you need to know how to tell it.  People respond to stories, they don't really care how many reading strategies you know how to teach or how many degrees you have on your wall.  They want to know YOU, and if you don't know who YOU are, it's quite a bit harder to tell others correctly.</p>
+
+            <p>So, to sum things up, I would say that it is important for educators to understand themselves deeply from a psychological perspective, and then to be able to develop their own story. Once you understand yourself and your story, you are better equipped to understand others and their stories. As a result, you have acquired one of the crucial skills of being a transformational educator; that of being PEOPLE DRIVEN!</p>
+
+            <p>Have a wonderful week!</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

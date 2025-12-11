@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Community... - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">February 03, 2025</div>
+            <h1 class="article-title">The Power of Community...</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>I grew up in VERY rural Texas.  We had ONE Main Street, ONE blinking red light, ONE high school (enrollment 220 students), ONE Bank that closed at 2 pm, ONE cafe that also closed at 2pm, and ONE Dairy Queen that closed at 8 pm. Everybody knew everybody.  On Friday nights the town would either all be at the football field or at the game out of town.  On Sunday's everyone would be in church.</p>
+
+            <p>I grew up with farmers as my adult examples and mentors.  The man on the left was one of my mentors.  His name was Charles Lang.  He was a farmer in my little hometown, and one of the BEST people I've ever known.  He was strong, kind, friendly, honest, and hard-working.  He always wore overalls, except on Sundays when you would find him at the front door of the church passing out the bulletins and giving everyone a warm handshake and a smile.  If you've ever been around a farmer, you know they don't get really excited about much.  They feel that their lives are kind of at the mercy of God/Mother Nature, and that they would just as soon take things as they come rather than worry or complain (too much).  When a farmer had finished in the field for the day or it was too wet, you would often find them down at the domino hall playing dominoes and telling stories.  Here is one of my favorite "farmer stories".  It's about the value of community, and I think it has excellent application to what we do as educators.</p>
+
+            <p>There was a farmer who grew excellent quality corn. Every year he won the award for the best grown corn. One year a newspaper reporter interviewed him and learned something interesting about how he grew it. The reporter discovered that the farmer shared his seed corn with his neighbors. “How can you afford to share your best seed corn with your neighbors when they are entering corn in competition with yours each year?” the reporter asked.</p>
+
+            <p>“Why sir,” said the farmer, “Didn’t you know? The wind picks up pollen from the ripening corn and swirls it from field to field. If my neighbors grow inferior corn, cross-pollination will steadily degrade the quality of my corn. If I am to grow good corn, I must help my neighbors grow good corn.”</p>
+
+            <p>So is with our lives... Those who want to live meaningfully and well must help enrich the lives of others, for the value of a life is measured by the lives it touches. And those who choose to be happy must help others find happiness, for the welfare of each is bound up with the welfare of all...</p>
+
+            <p>-Call it power of collectivity...</p>
+
+            <p>-Call it a principle of success...</p>
+
+            <p>-Call it a law of life.</p>
+
+            <p>The fact is, we are a community, and we are all in this together!  As you go about your summer, think about this and how you can help make our school the BEST community of learning for ALL of our students!</p>
+
+            <p>Thank you for all you do and thank you for a WONDERFUL school year.</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

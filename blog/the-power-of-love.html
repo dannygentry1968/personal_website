@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Love - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">March 03, 2025</div>
+            <h1 class="article-title">The Power of Love</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>This past weekend was a tough one at the Gentry household.  On Friday afternoon, Godiva, our beloved friend and companion, got really sick all of a sudden.  I left school at about 3:00pm and took her to the vet in Dixon.  When I got home, I was surprised to find such a sick friend, because she was fine when I left home to come to school.  The vet ordered some tests and I waited.  The news wasn't good.  Her liver was enlarged and she had a massive fever of undetermined cause.  He advised overnight treatment and further evaluation at a pet hospital in Cordelia.  We rushed her there and the news got even more grim.  Her gallbladder was enlarged and about to rupture.  She had fluid of some sort in her abdomen, and some spots on her spleen. Her blood sugar was low.  So, we started her on IV antibiotics, glucose, and pain medicine, and hoped and prayed she would improve by morning.  For a short time, it did seem that she was improving a bit, but just before 8am, the vet told us that there was little hope for her and that we should consider euthanizing her. There were just too many strikes against her.  Our otherwise healthy dog up until a day ago, was just too sick to make it.  We talked it over, and realized that we had done all we could for her and that, as painful as it was, it was the right decision to let her go.  We gathered around her and held her for about an hour and said our goodbyes. We stayed with her until she closed her eyes for the last time.</p>
+
+            <p>For the non-pet owner, the love for a pet and the grief experienced from their passing may seem a bit puzzling.  In many ways they become like one of your children.  You take care of them, and they depend on you.  Dogs in particular are very devoted to their families, and this was especially the case for Godiva.  She followed us everywhere we went in the house, and she was a constant loving presence in our lives for the past 8 1/2 years.  She made us happy; that was her job and she enjoyed every minute of it.  Needless to say, we spent the weekend crying, remembering, and trying to figure out if there was any clue to her condition that we had missed; anything that we hadn't done or considered.  We had nothing but grief and giant hole in our family.</p>
+
+            <p>I knew I had to write this today, as much for me as for anyone else.  I knew that I somehow had to find some meaning in all this.  It seems irrational that such a healthy and vibrant friend can leave so soon.  There was so much more life ahead.  Godiva was a lucky dog.  She never really had an unhappy day in her short 8 1/2 year-old life, at least not one that I could see from a doggy point of view.  She was loved greatly, and she loved greatly every day.  That's a pretty special thing when you come to think of it.  Wouldn't that be great if someone could say that about their own life?  While death is a subject that most of us would like to avoid, spending some time thinking about it helps to remind us of the power of love and of the brevity and preciousness of life.</p>
+
+            <p>As educators (and as human beings for that matter), one of the things we need to remind ourselves of often is that love REALLY is the greatest force in the universe!  Used effectively, it can break through any barrier or difficulty that exists.  Love is not a feeling that is fleeting as you may think; Love is a choice.  When you truly choose to love your students (especially those who are sometimes harder to love), you see them in a different light.  You see them not just for what they are today, but for the potential that is within them.  You see them for the wonderful creation that they are; in all of their uniqueness.  That love doesn't go unnoticed or unfelt by them.  It causes a chain reaction that will impact them for the rest of their lives and in the lives of those around them.</p>
+
+            <p>Life is precious; don't waste it.  Life is too short to live with negative emotions.  Besides, those negative emotions cause stress (this is a proven scientific fact) that makes us worn out, tired, and physically sick. Anger, resentment, and bitterness only add up to misery.  Take care of yourself like you would take care of the people you love.  Treat yourself like somebody you are responsible for helping.  Take a lesson from my friend Godiva, love and make all of your days, and the days of those around you, as happy as possible!</p>
+
+            <p>Have a wonderful week!</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

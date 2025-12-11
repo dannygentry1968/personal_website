@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aunt Bobbie - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">January 06, 2025</div>
+            <h1 class="article-title">Aunt Bobbie</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>Five years ago, just before Thanksgiving, my dearest Aunt (Bobbie) passed away.  She was my dad's younger sister and we were very close.  We talked on the phone often; just about as often as I talked to my own mom.  She was funny, loud, sassy and opinionated, sweet and loyal.  She never met a stranger and didn't have an ounce of fear (not even of death itself).  Before my dad passed away, she and my uncle Bill always spent Thanksgiving at my parent's house.  After my dad passed away, they started coming to my house and spent the day with me, my wife, and our daughter.  My uncle Bill didn't hang around on earth too long after Aunt Bobbie passed away.  As is so often the case with seniors after the passing of a spouse; his heart was broken, his dementia worsened, and he just lost the will to live. Needless to say, these past few years without them, and now being SO far away from other family and friends has made me more focused on this holiday of Thanksgiving ...and what it means.</p>
+
+            <p>My aunt Bobbie used to tell stories about how back in the Great Depression, they lived in a little farm house out in the middle of nowhere.  Like many people in rural Texas back in those days, they were tenant farmers. This meant that you lived in a "field house" owned by the landowner, and from that little house, you and your family worked the land and ran the farm.  They owned a little house in town, but had to live out on the farm to make a living.  She said the walls of the house were so thin that when the wind blew, you could hear the wall-paper rustling.  They had no electricity or indoor plumbing.</p>
+
+            <p>I am thankful for a rewarding career that allows me to live in a nice warm and comfortable home.</p>
+
+            <p>Aunt Bobbie also told a story about her mother (my grandmother who I never knew).  She was married before she knew my grandfather, but her first husband died in 1918 from the Spanish Influenza Epidemic.  He was an amazingly talented artist who was making a living as a painter of store windows and advertisements.  I've actually seen some of his work, and it was very good!  Anyway, they lived way out in the country and he came down sick with the flu.  My grandmother had an infant son (my uncle Roy) at the time, but she managed to walk seven miles to town in sub-freezing weather with her baby to fetch the doctor. By the time she got back home with the doctor, her husband had died.  My grandmother's dad (my great-grandfather) was a successful farmer and after her husband passed away, he gave her a house in town where she lived and eventually met and married my grandfather.  It's the house where my dad and his sisters were born, and the house where I lived with my wife when our daughter was born.</p>
+
+            <p>I am thankful for my healthy family and for modern medicine that works to help keep us healthy.</p>
+
+            <p>My Aunt Bobbie told me about how she cried when my dad joined the Navy in 1945 near the end of WWII.  She was sure that she would never see him again once he got on the train to San Francisco, and ultimately a ship that would carry him across the Pacific.  He wrote her letters and sent her pictures that she shared with her Junior High school friends, and later with me.</p>
+
+            <p>I am thankful for the men and women who have fought for our country and for the freedom we have as a result of their sacrifice.</p>
+
+            <p>When I got my Master's degree and started my career as an administrator, my Aunt Bobbie came to my graduation and took my dad's place in congratulating me.  She also visited several of my other schools and met many of my staff members.  I'm sorry you won't have that opportunity, because she was truly one of a kind.  She always reminded me to "love the kids and your teachers".  Rest assured, that I do love you all.</p>
+
+            <p>I am thankful for all of you...my school family...for taking me in and for making me feel at home here at Rolling Hills.  You are all wonderful and I am blessed beyond measure because of you. Thank you for the kindness you have shown to me, and most of all....THANK YOU for all you do for our students!!</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

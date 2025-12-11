@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Service to Others - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">May 19, 2025</div>
+            <h1 class="article-title">The Power of Service to Others</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>With last week being the anniversary of the 9/11 terrorist attacks, I spent some time watching some YouTube videos on the event and ran across one called: The Heroes of the 88th Floor.  If you have a chance to watch it, I highly recommend it.  The documentary reminded me that the REAL story of 9/11 was not the act of terrorism itself; it was the story of ordinary Americans from all walks of life, who came together in a moment of tragedy.  These brave and courageous individuals risked their lives to help each other, and inspired others to do the same.  Two of those inspirational heroes at the World Trade Center on 9/11 were Port Authority Supervisors Frank DeMartini and Pablo Ortiz.  These men gave their lives to save seventy-seven people who were trapped, and would have otherwise perished in the North Tower.</p>
+
+            <p>Following the impact of American Airlines Flight 11 on the 92nd floor above, everyone in the 88th floor office of the Port Authority was in shock.  As the smoke grew thicker inside, Frank and Pablo took charge and kept everyone calm while they tried to find a way out.  They searched the floor and found that only one emergency stairwell was passable for an escape, and led all their co-workers to it.  Instead of descending down the staircase with the rest of their co-workers (and Frank's wife) they went upward to the higher floors below the impacted 92nd floor, to save others.</p>
+
+            <p>When they initially started down the stairs, they heard an intense pounding from above on the 89th floor.  Together, they trudged up the stairs and yelled to the other side to try to establish contact. The crash had caused the stairway to twist, and the door was stuck.  Frank grabbed a hammer from Pablo's tool bag, and made a hole in the sheetrock wall.  He came face to face with a man that was pleading for Frank to save him. They tore a hole in the wall next to the door and allowed the trapped workers to escape.  After escorting everyone out of the floor, Frank and Pablo continued up the 90th and 91st floors where they evacuated more people who were trapped.  The fire, smoke, and debris blocking the exits and stairwells grew worse with every floor they climbed</p>
+
+            <p>Frank and Pablo found eighteen survivors from the 91st floor and led them to the stairwell.  On their way down, they stopped along the way to search for more survivors.  On the 86th floor, they found and saved a group of six stranded survivors who were struggling for their lives.  Finally, when they reached the 78th floor, they heard a man inside an elevator who was pounding the door and yelling for help.  Frank and Pablo were able to pry the door open to free the man.  That was the last time anyone reported seeing either Frank or Pablo in the tower.  These brave men gave up their lives to save many, and inspired others to help many more while on their perilous trip down the stairs to safety.  Frank and Pablo were TRUE heroes!</p>
+
+            <p>As educators, our work is not as dramatic or "life or death" as the work that Frank and Pablo found themselves engaged in on that fateful day.  That is NOT to say that the work we do isn't important and that we aren't saving lives...because (in a sense) we are.  Teaching IS important because we are giving people the tools they need to be able to live a more meaningful and productive life.  We are giving them the keys that they can use to unlock their future and unleash their potential.  Our work is a CALLING, not a job.  We do what we do for the love of our students and because we know that it carries with it great meaning and significance.  The people in the towers never got to thank Frank and Pablo for saving their lives.  Likewise, we may never have many opportunities to hear "thank you" from our students or their families.  Nevertheless, on days when things aren't going well in our classrooms, and it seems like we would be better off if we just gave up....we put our heads down and we trudge up the "stairs" like Pablo and Frank...to give it our all for students.  WHY...because we are teachers, and it's who we are and it's what we do!</p>
+
+            <p>"Well, the sun's not so hot in the sky today</p>
+
+            <p>And you know I can see summertime slipping on away</p>
+
+            <p>A few more geese are gone, a few more leaves turning red</p>
+
+            <p>But the grass is as soft as a feather in a featherbed</p>
+
+            <p>So I'll be king and you'll be queen</p>
+
+            <p>Our kingdom's gonna be this little patch of green</p>
+
+            <p>Won't you lie down here right now</p>
+
+            <p>In this September grass</p>
+
+            <p>Oh the memory is like the sweetest pain</p>
+
+            <p>Yeah, I kissed the girl at a football game</p>
+
+            <p>I can still smell the sweat and the grass stains</p>
+
+            <p>We walked home together. I was never the same.</p>
+
+            <p>But that was a long time ago</p>
+
+            <p>And where is she now? I don't know</p>
+
+            <p>Won't you lie down here right now</p>
+
+            <p>In this September grass</p>
+
+            <p>Won't you lie down with me now...</p>
+
+            <p>Oh, September grass is the sweetest kind</p>
+
+            <p>It goes down easy like apple wine</p>
+
+            <p>Hope you don't mind if I pour you some</p>
+
+            <p>Made that much sweeter by the winter to come</p>
+
+            <p>Do you see those ants dancing on a blade of grass?</p>
+
+            <p>Do you know what I know? That's you and me, baby</p>
+
+            <p>We're so small and the world's so vast</p>
+
+            <p>We found each other down in the grass</p>
+
+            <p>Won't you lie down with me right here</p>
+
+            <p>In this September grass"</p>
+
+            <p>September Grass...Lyrics by James Taylor</p>
+
+            <p>When I was in college, one of the best memories I have is being on a fishing boat doing some night fishing off the coast of Florida with some of my buddies, and having James Taylor's Greatest Hits album playing on a continual loop in the background.  Since then, his music has basically been the background music of my life, and hearing certain songs brings those memories flooding back.  In 2001, while I was a principal in a small town in west Texas.  My secretary had tickets to a James Taylor concert but was unable to go, so she gave the tickets to me and my wife.  It was one of the most amazing concerts that I've ever attended.  That night, JT debuted some of the songs from his upcoming October Road album.  One of the songs he performed was "September Grass", and is the music for the video that I shared above.</p>
+
+            <p>By the time the October Road album came out in the fall of 2002, we were living in Colorado and I remember being excited to see it in a music store in Aspen.  We lived in a little town just "down-valley" from Aspen, and we had driven up there on a Saturday to look at the fall foliage.  From the moment our 9 year-old daughter heard this album, it became her favorite.  During the years we lived in Colorado, this music was on "infinite loop" in our cars as we went to and from school / work and on our weekend adventures.  Today, the songs from that album bring back sweet memories of driving the mountain backroads of Colorado in our 4X4...watching the leaves change, catching rainbow trout out of clear mountain lakes, hearing the bugling call of hundreds of elk migrating down the mountain slopes, and breathing in the cool, crisp fall mountain air.  Most of all, it reminds me of the singing and laughter of our daughter, and the fun we all had on those outings.</p>
+
+            <p>The funny thing about memories is that we usually don't recognize that they are being made WHILE they are happening.  It's as if memories are just the "residual fluff" left over after our experiences.  We don't control their manufacture, but we can definitely influence their content.  Our brains hold on to the events that it can, and especially those events that are meaningful.  Recent advances in neuroscience tell us that our memories are also strongly linked to our senses.  That's why things like music, or certain smells help to bring forth memories that were otherwise buried within our subconscious. Our brain also modifies our memories as they weaken over time, giving them sometimes a dream-like quality.  As educators, we are in the BUSINESS of creating memories...at least the type of memories that we classify as LEARNING.  At the same time, we also need to be mindful that WE are creating other memories for our students...memories of what it was like being a student in your class and a student in our school.   What we do and say in our classrooms will become a part of who our students are, and will have an impact on them for the remainder of their lives.  Knowing that, it places a special responsibility upon us to help make those memories as positive and as meaningful as possible. This fall, spend some time thinking of ways that YOU can make some great memories for your students!</p>
+
+            <p>I emailed this inspiration out a few weeks ago, but I've tweaked it a little bit for this issue.  In light of the "leaf" story in the article above, I wanted to post this again because I believe that the message is SO powerful.</p>
+
+            <p>I've been refinishing some antique furniture lately.  I've always had an interest in woodworking, and have done a few pieces over the years.  There is something very satisfying about taking something that is broken or "ugly", and turning it into something functional and beautiful.  In our modern society, we have a tendency to think of things as disposable.  However, in the past, people had to fix things when they broke because they didn't have the money or the resources to buy something new.  For those of us in the modern world with an eye towards "fixing things", YouTube is our best friend.  Lately, I've been watching some videos for tips and inspiration on my projects.  Once you search for "restoration" on YouTube, it's surprising how many videos there are out there of people fixing and restoring all sorts of things.</p>
+
+            <p>It's really fascinating to watch a skilled individual, with the right tools, take something that looks like it is headed for the trash heap, and turn it into something that is beautiful and functional.  One example is THIS video (12 minutes long and worth watching even if you're not into this sort of thing) that showed a master craftsman totally refurbish an old Oil Can from the early 1900's.  He had the correct tools, skills, and determination that it took to get the job done.  The job was difficult, time consuming, and had lots of small parts...each that needed just the right amount and type of attention.</p>
+
+            <p>It dawned on me that, as educators, our work with students parallels that of these restoration specialists.  Many times, we have students who come to us who are "damaged" by the circumstances they find themselves in, or they are delayed in their academic progress for various reasons.  As teachers, our job is to fully engage with those students, and to use the tools available to us, our skills, and our experience to allow them to achieve their full potential as a student...and as an individual.  It really is a beautiful thing to be part of that transformation.</p>
+
+            <p>Our job is daunting and difficult at times, but ultimately it is satisfying work to know that we had a REAL hand in helping someone make that transformation to success!  Never lose sight of the fact that YOU make a difference!   Look for what lies beneath the surface in your students...you'll be surprised at what you may find.</p>
+
+            <p>Sometimes the best gifts are the ones nobody knows about.</p>
+
+            <p>Mrs. Davis stood at the front of her class on the day before Christmas break and thanked her students for all the hard work they had put in that semester.  She had worked them pretty hard, but they had all made progress; and for that she was proud.  She also thanked them for the kind gifts they had brought to her...an Elvis Christmas ornament, a coffee mug shaped like a moose, fluorescent green nail polish, a coffee table book about Switzerland, and a refrigerator magnet shaped like Texas, were among some of the more notable ones.  The class heard the bell ring about the time she said "Merry Christmas" and they all jumped up and hurried out of the classroom.  A few students stopped to give Mrs. Davis a brief hug and then they scurried out the door.</p>
+
+            <p>After the roar of the Christmas vacation exodus had died down, Mrs. Davis gathered herself a bit, lifted her head and noticed that there was a student still in their desk at the back of the classroom.  It was Chris; he had his head down on his desk and was asleep.  How on earth he could have slept through the commotion of the last five minutes, thought Mrs. Davis.  She walked closer to him and put her hand on his shoulder to roust him from his slumber.</p>
+
+            <p>"Hey, Chris...Come on, time to go home.  The Christmas vacation clock is ticking....tick, tick, tick...", said Mrs. Davis with a grin.</p>
+
+            <p>Chris looked up from his desk towards Mrs. Davis, with an embarrassed smile on his face.  "I'm sorry Mrs. Davis.  I had a late night last night.  My dad had to work late, and I had trouble getting my little brother to sleep.  He's such a pain sometimes", Chris said.  "I promise I'm on my way, just let me get my things together."</p>
+
+            <p>Chris put all of his things in his backpack and then began to rummage around in his bag as if he were looking for something.  His hand finally felt it deep inside the bag, and he smiled as he took it out.  It was a costume jewelry necklace with gaudy rhinestones and rubies.  It looked like something from a rummage sale or something pulled from the trash heap, but Chris held onto it like it was an priceless family heirloom.</p>
+
+            <p>Chris walked up to Mrs. Davis.  "I picked this out for you", said Chris as his shaking hand passed the necklace to Mrs. Davis.  "I don't think you'll like it too much, but I thought it would look good on you.  It was my mom's.  She was nice like you, and pretty too.  Thank you for being my teacher."</p>
+
+            <p>Mrs. Davis knew about Chris' mom, she had passed away from cancer a few years ago.  Dad was doing his best, but things had been tough at home.  Chris was the oldest of three, and he often had to care for his younger siblings while his dad pulled extra shifts to make ends meet.</p>
+
+            <p>"Why thank you, Chris!" she said, wiping a tear from her eyes.  "It's the most beautiful thing I have ever seen.  Do you think you could help put it on me?"</p>
+
+            <p>Mrs. Davis turned around and squatted down a bit as Chris got up on his tiptoes and put the necklace around her neck and fastened it.  Chris gave her a hug and then picked up his bag and he was out the door and gone.  Ten seconds later, there were some loud running steps back to her door.</p>
+
+            <p>"Merry Christmas, Mrs. Davis", he said with a smile.</p>
+
+            <p>"Merry Christmas, Chris!" said Mrs. Davis, wiping tears from her eyes.</p>
+
+            <p>Mrs. Davis went back to her chair, gathered up her coat and her lunch pail.  She forgot all of the other presents that were on her desk as she turned off the light and shut the door.</p>
+
+            <p>On the way home that day, Mrs. Davis stroked her new long necklace.  She knew just what she would wear it with, and she knew she was glad to be a teacher.</p>
+
+            <p>Merry Christmas everybody!  You all make a difference in big and little ways to every one of your students.  Your life and your actions touch SO many people.  Thank you for being a positive influence on the lives of your students.  Merry Christmas!</p>
+
+            <p>I'm a big animal lover, so naturally this picture caught my attention.  As an educator, it definitely spoke to me!  There is a lot to be said for resilience, but what we might fail to understand is that what might look easy for some, is quite hard for others.  What might be a minor impact for some, may well be devastating for others.  I wish it were as easy to wash away life's mistakes and tragedies as it is to wash away mud...but it isn't.  Survival sometimes leaves scars.</p>
+
+            <p>As public educators, our students are a microcosm of our community.  Many of us who have been in this profession for awhile have all had the experience of dealing with students who are the victims of deeply distressing and/or disturbing experiences.  How students deal with that trauma depends on many factors, not the least of which is the support they get from the adults in their lives.  Teachers are MAJOR adults in the lives of kids!</p>
+
+            <p>The reason why I'm bringing this up is to emphasize the importance of developing close and caring relationships with your students.  Yes, part of our job is to EDUCATE (and that is what we are evaluated on), but another equally important aspect of our work is NURTURING.  Nurturing is NOT the same as coddling or permissiveness.  Nurturing teachers have clear values and actively encourage self-discipline, commitment, and intellectual and creative freedom in their students.  Additionally, nurturing teachers...</p>
+
+            <p>trust their students' fairness and good judgment.</p>
+
+            <p>respect their students' autonomy, thoughts, and feelings.</p>
+
+            <p>support their students' interests and goals.</p>
+
+            <p>enjoy their students' company.</p>
+
+            <p>protect their students from hurting him- or herself or others.</p>
+
+            <p>model self-control, sensitivity, and values they believe are important.  (Daniels & Peters, 2013, p. 117-118).</p>
+
+            <p>I encourage all of you to begin to examine your level of nurturing by looking at your ratio of positive to negative corrections in your classroom.  Current research suggests that the ideal is at least a 5:1 positive to negative correction ratio. In classrooms with high percentages of "at risk" students the ratio may need rise to 7:1.  According to Cook, et. al. (2017), a 5:1 ratio has been shown to...</p>
+
+            <p>-help students feel appreciated and important in the classroom</p>
+
+            <p>-reduce disruptive behavior</p>
+
+            <p>-increase academic engagement</p>
+
+            <p>-lead to more positive and caring students and a positive classroom climate</p>
+
+            <p>Being mindful of the 5:1 ratio is just ONE way to become a nurturing teachers and to help mitigate the effects of the trauma that some of our students come to school suffering from.  While it might not be a "cure", it is certainly a best practice that ALL students would benefit from.</p>
+
+            <p>Cook, C. R., Grady, E. A., Long, A. C., Renshaw, T., Codding, R. S., Fiat, A., & Larson, M. (2017). Evaluating the Impact of Increasing General Education Teachers’ Ratio of Positive-to-Negative Interactions on Students’ Classroom Behavior. Journal of Positive Behavior Interventions, 19(2), 67–77. https://doi.org/10.1177/1098300716679137</p>
+
+            <p>Daniels, S. & Peters, D. B. (2013).  Raising creative kids.  Tucson, AZ: Great Potential Press.</p>
+
+            <p>At the Right Person at the Right Time…Winston Churchill</p>
+
+            <p>Some of you know that Ginger and I were scheduled to go to England over Spring Break.  We still intend to go (probably over Thanksgiving) once the virus threat is over and everyone is free to move about.  We had three destinations on our trip that involved the great Winston Churchill.  The first was his birthplace and ancestral home: Blenheim Palace, located in Woodstock, just outside of Oxford. The second was his burial place: The tiny country church of St. Mary's Church in Bladon, just a stone's throw from Blenheim.   The third was the Churchill War Rooms, located deep underground and around the corner from #10 Downing Street in London.</p>
+
+            <p>In preparation for our trip, we watched a number of documentaries on the life of Churchill.  One of the things that struck me was that he was a man of action, who tried his best to make things happen. Unfortunately, in the pursuit of action, he failed quite frequently.  He suffered from bouts of depression, especially after the British defeat at Gallipoli in WWI, which he had conceived and pushed the military to pursue.  He was frequently at odds with his own party.  His rise to Prime Minister, and his status as the great wartime leader that we know, was filled with ups and down, surprises, and bitter disappointments.</p>
+
+            <p>When Hitler began his rise to power in the 1930's, Churchill was among the few British politicians with the courage to speak out against fascism as an ideology, and the folly of making peace treaties with a madman.  In May of 1940, Churchill became Prime Minister.  The UK was already at war with Germany by this time, and the Germans had already overran Belgium and France.  They had pushed the British army that was on the continent into the little French port of Dunkirk, just across the English Channel.  All that the Germans needed to do to ensure their victory, was to deliver a "hammer strike" against the British forces who were vulnerable on the beaches and those who were unprotected in the boats as they retreated.  If the could accomplish this, the British Army would be lost...and with it the war...and with it the freedom and liberty of Western Civilization.</p>
+
+            <p>What the Nazis didn't realize was that they were not just up against the British army, they were up against the "plucky and stiff upper-lipped" British people.  When the British heard that their soldiers were trapped on the beaches just across the Channel, average citizens manned every boat they could find, and sailed into a war zone to the rescue.  They banned together and literally saved the world!</p>
+
+            <p>During this time, Winston Churchill rose to the occasion.  He was the right person at the right time. Despite being plagued by depression at times, being ignored by his own party for years, and being despised by his opposition, he provided precisely the type of leadership Great Britain needed at that time.  On the afternoon that the impromptu fleet of ordinary British citizens had completed ferrying over 330,000 British soldiers back home from certain destruction in France, Churchill rose in Parliament to deliver one of his most stirring speeches.</p>
+
+            <p>"We shall defend our island, whatever the cost may be, we shall fight on the beaches, we shall fight on the landing grounds, we shall fight in the fields and in the streets, we shall fight in the hills; we shall never surrender." Winston Churchill</p>
+
+            <p>Today, we find ourselves in a dire situation as well.  An unseen enemy has paralyzed the world and has brought us to the edge of economic collapse.  Thousands are dying around the world and medical staffs are being stretched to their limits.  Meanwhile, closer to home, our students and their families (and all of us) are facing some uncertain and frightening days ahead.  As educators, we know that our duty is to our students and their families.  This new model of distance learning will bring with it many challenges and obstacles.  I'm confident that you will work around those obstacles or go right through them with grit and determination.  We won't always know the answers, but we will continue to work together to solve the problems we will face.  Yes, the days ahead will be difficult, but we will get though them with courage, determination, and a continued passion to always do our utmost for our students.  YOU are the right people, at the right time, to face this challenge.  We can, and we will, get though this...stronger, and better than we were before.  You have the skill, and you have the will...now it's time to do what is necessary.</p>
+
+            <p>Endurance…Fidelity…Intelligence</p>
+
+            <p>A few years ago, I was walking in Central Park in New York City.  It was a cold and cloudy day, and we happened upon the statue of a forgotten hero...named BALTO.  No, Balto is not a Greek or Roman hero, he was a hero of the "four legged" variety.  He was a Siberian Husky sled dog, who who led his team on the final leg of a heroic 1925 overland journey from Nenana to Nome, Alaska, in order to deliver a shipment of diphtheria medication needed to stop an ongoing epidemic.  Balto proved himself by saving his team in the Topkok River.  He also managed to stay on the trail in near whiteout conditions; his handler, Gunnar Kaasen, stated he could barely see his hand in front of his face.  The statue in Central Park was erected in December of 1925.  The inscription on the statue reads as follows:</p>
+
+            <p>Dedicated to the indomitable spirit of the sled dogs that relayed antitoxin six hundred miles over rough ice, across treacherous waters, through Arctic blizzards from Nenana to the relief of stricken Nome in the Winter of 1925.</p>
+
+            <p>Endurance · Fidelity · Intelligence</p>
+
+            <p>In light of our current situation, I was struck by the timeliness of those three words...Endurance, Fidelity, and Intelligence.  These are important traits that we, as educators, can use right now.</p>
+
+            <p>We need endurance to keep going, even when things are difficult.</p>
+
+            <p>We need fidelity, to stay true to our calling of serving students.</p>
+
+            <p>We need to use our intelligence to guide us when we are in unknown territory (which we are certainly in right now).</p>
+
+            <p>Torpedoes, A Hollywood Actress, and the Power of the Individual</p>
+
+            <p>Ginger and I are big fans of classic movies.  We especially like the films from Hollywood's "Golden Era" (the 1930's and 1940's).  Over Spring Break, we were watching Netflix (like everyone else) and stumbled across a Documentary called Bombshell.  It was about the Hollywood actress, known as Hedy Lamarr.</p>
+
+            <p>The quote above was one of Hedy's favorites, and it appeared in the film.  I find it VERY inspiring!</p>
+
+            <p>Hedy was born Hedwig Eva Maria Kiesler, in Vienna, Austria in 1914.  She was a young woman when Hitler began his rise to power, and as a person of Jewish ancestry who had already gained some attention in films in Austria, she managed to escape to America prior to the Holocaust.  Later, she was able to bring her mother to the United States.</p>
+
+            <p>Hedy was signed by MGM's studio boss, Louis B. Mayer, to a very large contract of $500/week ($9,000 in today's money).  She starred in pictures with huge stars like: Clark Gable, Jimmy Stewart, Spenser Tracy, Judy Garland, and Lana Turner.</p>
+
+            <p>It isn't her "star status" that made her so interesting, it was the fact that she was an INVENTOR.  From a young age, she was always tearing things apart and putting them back together to see how they worked.  She had NO formal training in science or engineering, other than the science and math she had while she was in secondary school in Austria.  She built an inventor's workshop in her home and had one in her trailer on the movie backlot.  When she wasn't working, she was tinkering with ideas and sketching things.  She even helped Howard Hughes design the wings of his fastest airplane.  He said that without Hedy's keen design insight, it wouldn't have been possible.</p>
+
+            <p>In 1940, Hedy's mother had made her way to London, but was stuck there because of the German "blitz" bombing of the city.  She knew that it would be hard for her to get to Hedy in America due to the German submarines sinking passenger ships in the Atlantic.  She wrote to Hedy of her fears.  Instead of wringing her hands and fretting, Hedy the inventor, went to work, thinking of a way to solve the problem.  She did some research, and found out that the Germans had superior torpedoes to the allies.  She reckoned that if the allies had more accurate torpedoes, they could sink more German submarines.</p>
+
+            <p>Her solution, a radio-frequency guided torpedo.  Without going into the technical aspects of the invention, it involved rapid switching between frequencies and a perfect synchronization between the allied ship and the torpedo to guide it to its target.  Her invention was granted a patent under US Patent 2,292,387 on August 11, 1942.  The Navy decided NOT to use the patent because they thought it was too big of a technical challenge.  They told her to use her beauty and "star status" to go sell War Bonds instead.  It was never used in the war, and the military sat on it until 1955 when elements of it (rapid frequency shifting) were used by defense contractors to guide missiles.  Hedy never received any compensation for the patent.  Today, it is the basis for technologies that we use everyday:  Bluetooth and WiFi.</p>
+
+            <p>Hedy continued her work as an actress through the 1940's and, as is common to most acting careers, she fell out of favor with audiences and the studios.  Despite being one of the first female producers, she abandoned Hollywood and lived in relative isolation for the remainder of her life (she passed away in 2000), never fully realizing her contribution to the technology world.</p>
+
+            <p>So, what  are the takeaways here for us as educators during this time?  I think there are two obvious ones...</p>
+
+            <p>When you're faced with a problem, don't be afraid to tackle it.  Use the knowledge that you have and put your best ideas to work.  You may be amazed at the innovative solutions you come up with.</p>
+
+            <p>Even though our work may not bring us accolades, fame, or fortune, we are laying an important groundwork for the next generation.  Like Hedy, we may not see the payoff, but it will come.  We can gain hope and encouragement in the knowledge that our work has made the future success of our students possible.</p>
+
+            <p>A BONUS Takeaway is also this...</p>
+
+            <p>There is always MORE than meets the eye.  In Hedy's case, she wasn't just a beauty with no brains.  She was a genius, but that genius needed to be nurtured.  Hedy's father and teachers allowed her to be curious.  Children are naturally curious about the world and how it works. If WE give them the opportunity to explore, we are giving them a true gift that may lead to some profound discoveries, not just for themselves, but for the world.</p>
+
+            <p>Hope in the Midst of Turmoil</p>
+
+            <p>Over the summer, my family and I went up to Crater Lake in Oregon.  If you have never been, it is well worth the visit.  The majestic vistas, the stunning blue waters of the lake, and the cool mountain air, are amazing and rejuvenating.  We visited the National Park on a calm, clear day when the reflection of the rim of the crater and the clouds above made for some excellent pictures.</p>
+
+            <p>Beneath the beauty of Crater Lake lies a monster.  It's not a monster like the one said to inhabit a famous lake in Scotland, but a geological monster.  About 7,700 years ago, Mount Mazama erupted violently, and spewed out over 12 cubic miles of volcanic material, creating the crater at it's summit now known as Crater Lake.  If we happened to be standing in the vicinity during the eruption, the scene wouldn't have been beautiful at all...it would have been terrifying.  If we could have walked the area and stood in this exact spot following the eruption, we would NEVER suppose that one day in the future, the area would be one of the most beautiful spots in the world.</p>
+
+            <p>Right now, our world is undergoing a great deal of turmoil.  We have a global pandemic, political unrest, social unrest, economic uncertainty, and natural disasters...all going on simultaneously.  As educators, we have never experienced these types of events...at least in our lifetimes.  We have been forced from our regular routine and into one that doesn't feel natural.  While we are seeing our students faces, we miss the handshakes, hugs, and interactions that form the basis of deep and meaningful relationships.  We are grieving for our loss as we look around and see the entire landscape of our world having changed in almost the blink of an eye.</p>
+
+            <p>Sometimes hope means holding on when all the data, and everything going on around us, tells us to "abandon ship", "throw in the towel, drop out, and just plain give up.  Hope means dreaming for, and planning for a better day to come.</p>
+
+            <p>As we stand on the rim of the crater of all that has happened this past year, now is NOT the time to focus on the bleakness of what we see in the present moment.  Instead, now is the time when we need to...close our eyes...and imagine a beautiful scene in the future.  We need to imagine a time when all of this has passed, and what we want our part of the world, that we have control over, to look like.  We don't imagine our corner of the world as it IS right now.  Rather, we imagine our corner of world as it COULD be.  The good news is that we are not PASSIVE AGENTS in this regard, we are ACTIVE AGENTS who have the ability to shape the future.  We don't have to wait around for the landscape to change on it's own; we don't have to conform.  WE can be part of the forces that make that positive change happen.  There is hope...and it starts with US.</p>
+
+            <p>“We must accept finite disappointment, but we must never lose infinite hope.” – Martin Luther King, Jr</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

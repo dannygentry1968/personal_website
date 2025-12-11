@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Symbols - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">June 16, 2025</div>
+            <h1 class="article-title">The Power of Symbols</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>Those of you who know me, know that I am avid reader.  I especially loved reading the Harry Potter series; not just because it is an outstanding story, but because I got to read it with my daughter.  We read ALL the books together, and we discussed them while I was driving her to school each morning. Through the years, we talked about why Harry's aunt and uncle were so cruel, how Harry missed his parents, the sacrifice of Dumbledore, the quest for eternal life, and the meaning of the Deathly Hallows.  In addition to reading the books, we had lots of fun going to see each of the movies on their opening night.  We still enjoy doing a Potter-Thon on rainy weekends.  We get lots of snacks and sit on the couch with blankets and watch all of the movies in the series from start to finish.  It's super fun because you never get tired of hearing a good story that is well told.</p>
+
+            <p>I've been reading a book recently about the use of symbols in literature, and how they pop up in interesting places throughout history.  In order to understand the development of written language, you have to go back into the distant past; before the first written characters were ever developed. During this time, the only method of communication was by orally passing along stories from one generation to the next.  Information that people needed for survival, and for the continuation of their tribe and heritage, was contained in the stories they told.  It obviously worked to our advantage as a species, because here we are today; uniquely hardwired in our brains to understand these types of symbolic stories.  Stories told in the oral tradition were densely packed, not with FACTUAL information necessarily, but with symbolic information.  This symbolic information is potent and is often ignored as a source of real knowledge in our supposed modern age of reason.  Today, we often dismiss these stories as myths with no real value for us today beyond just a glimpse into our past.  However, I believe that we dismiss them at our great peril because these are the stories that tell us not only who we WERE, but also who we ARE now, and what we are likely to BECOME in the future.</p>
+
+            <p>A symbol is an amazing thing because not only does it STAND for something, it is actually a thing unto itself.  The word for symbol in Greek means a "coming together" and is also used to describe a confluence; the point where smaller rivers unite to make one larger one.  When all of it's elements combine, the symbol takes on a unique meaning of it's own.  Unlike most images and written characters, effective symbols don't require an explanation.  When we see those types of symbolic representations, we often intuitively understand what they mean.  For example, great works of art have a subconscious impact on those who experience them.  Van Gough's Starry Night, is more than just pigment smeared across a canvas.  Peter Pan is more than just a collection of words.  Likewise, we and our students, are also much more than our component parts and our experiences.</p>
+
+            <p>Similar to the ways in which we interact with art, the interactions we have with our students are also rich and complex, and cannot be easily put into words.  As teachers, we FEEL deeply about our students.  It is that passion which drives us to do the difficult, and often thankless, work that we do. However, deciphering the WHY behind what we do isn't always easy.  The foundational basis for our thoughts and actions is much more complicated and nuanced than we can imagine.  In fact, it would be fair to say that we really don't know much about ourselves at all.  Recent studies by neuroscientists have concluded that only 5% of our cognitive activities (decisions, emotions, actions, behavior) are the result of conscious control.  That leaves the other 95% in the realm of the subconscious.  So, the things that we ARE consciously controlling and perceiving are just the TIP of the metaphorical iceberg (another great self-explanatory symbol).  This leads us to the sobering conclusion that we are collection of complicated, multilayered thoughts and actions, which essentially runs on autopilot most of the time.  In spite of the lack of control, our lives are like a beautiful painting composed of all the different elements of our self and our unique experiences. We are part of something larger than just the mundane world, our actions and our lives have symbolic meaning greater than we can imagine.</p>
+
+            <p>This week, take some time to consider the 5% of yourself that you have control over and ask yourself how you are impacting your students?  What colors and symbols are you adding to the your student's canvasses?  Are they words of LIFE and AFFIRMATION?  The words we speak to our students are much deeper than just the ones that come out of our mouths.  What stories are you telling them, and what symbols are you creating?</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

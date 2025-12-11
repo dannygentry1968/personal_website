@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Understanding - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">July 28, 2025</div>
+            <h1 class="article-title">The Power of Understanding</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>When I was first working on my Administration credentials at Baylor University in Texas, our professors assigned us the book by Stephen Covey:  Seven Habits of Highly Effective People.  It is a great read, and I highly recommend it.  It helped me to re-focus my life in many areas, and gave me many of the strategies that I still use to this day in dealing with people and difficult situations.  One of my favorite "Habits" is Habit #5.  Habit #5 states, "Seek first to understand, then be understood."  If you stop and think about it, there is a LOT to consider packed into this tiny statement.  First of all, this habit implies that in order to have an effective relationship with someone, we need to place primary emphasis on seeking to UNDERSTAND the other person first.  The best way to do this is to do a lot of listening and observing.  This can be difficult when you have a classroom full of students, but investing the time in listening to and observing our students (with the goal of forming a strong relationship with them) is essential to the work that we do.  While kids aren't exactly "miniature adults", they are capable of having bad days and bad attitudes on occasion, just like the "big people".  Truth be told, we probably need to do a LOT more listening and observing of our students on the "bad" days than on the good days, because that's the time when our students need that strong relationship with us the most.</p>
+
+            <p>As adults, we don't have a problem considering that OTHER ADULTS may have a differing perspective or opinion.  However, this is not consideration that we typically extend to our students.  Most of the time, instead of listening to and observing our students on those "off days" or just asking for their opinions and ideas, we just insist on compliance to OUR rules and expectations.  As long as our students comply, then the relationship is good; if they choose NOT to comply, then the relationship tends to go poorly.  Teachers tend to like students who are compliant.  It's as if the type of relationship our students have with us is almost totally dependent on THEIR behavior.  From a behavioral perspective this is only looking at HALF the story.  We should not be sending the message to our students that the terms of our relationship is solely determined by the degree to which they are compliant.  Our desire for compliance, and the students' attempt to meet (or thwart) those expectations, can be exhausting and stressful at times. However, good teachers know that forming strong and positive relationships with students is more than half the battle of teaching.</p>
+
+            <p>Additionally, as teachers, we sometimes mistake compliance for engagement.  In other words, what sometimes looks like students behaving appropriately and "doing their work" is just students "going along to get along".  They are behaving because they are afraid of the consequences, not because they are AUTHENTICALLY engaged. Authentic engagement occurs when students are behaving because they WANT TO and because doing so enables them to persist in the learning that is taking place.  Sometimes authentic engagement can be mistaken for chaos, but upon closer examination, you see that students are just playing an active role in their own learning...for learning's sake.  As a teacher, if your goal is greater amounts of engagement (and I would think that would be your goal), then shoot for AUTHENTIC ENGAGEMENT rather than just passive compliance. I guarantee that it will yield much more in terms of student learning.  It is difficult work, because Authentic Engagement comes only with lots of time and effort spent in establishing those strong and positive relationships with students.</p>
+
+            <p>For me, all of this is what makes teaching such a rich and rewarding career.  The work that we do is SO important and what makes it even more so is that we are in the PEOPLE business.  This makes our work with children just like all other significant relationships we have in our lives:  complicated, messy, rewarding, frustrating, and glorious...all at the same time.</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

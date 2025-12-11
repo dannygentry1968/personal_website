@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Could You Do That You WOULD Do? - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">January 20, 2025</div>
+            <h1 class="article-title">What Could You Do That You WOULD Do?</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>I'm currently reading an interesting book.  In it, the author asks a very thought provoking question: "What CAN you do, that you WOULD DO...today; that would be something that would improve your life...even if it's just a tiny bit?  Then DO IT, and reward yourself with some little reward once it's complete."  For young adults, he suggested; "Start with cleaning your room."  He said, "How can you expect for anyone to take your ideas seriously, if you can't even master the task of cleaning up your own room?"  Of course, he is using this as a hypothetical, but the implication is that sometimes we try to tackle the big things of life, when we haven't even mastered the small or trivial ones.  He suggests that perhaps we would have more success in life and develop more confidence in our own abilities; if we could sort out the little things first, fix THEM, and set THOSE right.</p>
+
+            <p>As educators, we have a HUGE job, with many components, many students, and TONS of responsibility. It's almost overwhelming; and sometimes it genuinely IS overwhelming.  How can we stand up against all of this and make changes when the task is SO INCREDIBLY LARGE AND DAUNTING?  So, with this in mind; here is today's inspirational challenge....</p>
+
+            <p>Take a look at the things you do as a teacher on a daily basis.  Pick ONE thing that you think you COULD do better, or something you can fix...then DO IT. Afterwards, reward yourself with a small reward for having done it. There, now you've accomplished something.  So what if it's something small, it's something. If you do that each day for an entire school year, you will have changed 180 things!!!  180 things is NOT trivial, but substantial.  At the end of the year, I would be willing to bet that your teaching, your classroom, and maybe even your life will be different and better as a result.</p>
+
+            <p>"WHen it comes right down to it...Loving and serving is what it's all about.  The only thing you can really take with you, is what you give away."</p>
+
+            <p>As most of you know, I grew up in a small town in Texas.  Most of the men that I knew were farmers or the sons of farmers.  My dad was the son of a farmer.  These men were hard working and honest.  These are the men that helped shape my life and served as my mentors.</p>
+
+            <p>This week, I'm sharing a video that a friend of mine posted recently.  It's about a retired barber and horse trainer in our hometown by the name of Horace Bratcher.  The video focuses on his work as the oldest member of the Odd Fellows Lodge in Texas, but Horace and his legacy are SO much bigger than that.  He has literally touched our entire community with his life of service.  Everyone in my little hometown knows Horace; he drives a 1981 Yellow Subaru and you see him all over town.  Horace is in his mid-nineties, by the way.  One of the ways he gives back to the community, is that he sings and preaches at funerals.  He has a beautiful voice, even at his age.  He is a prime example of a life of service.  As educators, we are fortunate that we are in a profession where we get the opportunity to serve people every day.  We have the power to transform lives for the better.  Never underestimate your impact.  As Horace said, "The only thing you can really take with you, is what you give away."  I saw this video this week, and my purpose for including it in RedHawk Tales this week is not to make anyone cry.  My purpose is to remind you that YOU (teachers) are the boy on the train (when you watch the video you will understand).</p>
+
+            <p>We have something that the world needs, but we can't keep it to ourselves...we have to share it with others.  In addition to the knowledge and skills that we pass on to our students, we also pass on life lessons of kindness, tolerance, and self-esteem.  Our influence over the lives of our students is powerful.</p>
+
+            <p>Last week I introduced you all to my friend Horace, who spent his life in service to others.  In that video, he reminded us of the quote from the sign that was hanging in the office of George Bailey in It's a Wonderful Life..."All you can take with you is that which you've given away."  George Bailey was a man who gave, and gave, and gave; and felt like he had missed out on the wonderful life he had always dreamt about.  He felt like a failure and that his life didn't mean anything.  However, through the help of a hapless guardian angel, he learned that the act of giving away his life in service to others is exactly what saved him.</p>
+
+            <p>Thank YOU for giving yourself to your students; and thank you for being willing to give both shoes (watch the video)!</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

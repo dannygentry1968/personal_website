@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Christmas Wish - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">January 13, 2025</div>
+            <h1 class="article-title">A Christmas Wish</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>First of all, I would like to thank ALL of you for a wonderful 2017.  We have accomplished some great things together this year, and I am looking forward to an exciting 2018, full of wonderful learning and accomplishments.  Also, THANK YOU all for your kind gift and for your support and friendship.  Rolling Hills is a special place because of the people, and I am blessed beyond measure to be the principal of this great school.</p>
+
+            <p>When I was in kindergarten, all I wanted for Christmas was a hamster.  My mom was against it.  She said it was basically a rat and that they were nasty and unclean to have in the house.  So, when I mailed that letter to Santa, I knew that the "big guy" wouldn't disappoint me and I waited with anticipation.  At school, I began to hear rumors on the playground that Santa wasn't real; that it was your parents who did it.  This bothered me greatly, and I went home and asked my parents about it.  They assured me that my classmates were wrong, but in the back of my mind I still had some doubts.  SO, after we got home from my aunt's house on Christmas Eve, I tried very hard to stay awake and spy on any "Santa" activity.  As I was nodding off, there was a rumble at the door, and I sprang up to look through the crack in my door and down the hallway where I had a direct view of our Christmas tree.</p>
+
+            <p>I saw SANTA....IN MY HOUSE!  He had a big sack and was working quickly to put all the stuff under the tree.  I was petrified and darted out to wake up my parents...both of whom were in bed.  Frantically, I told them that SANTA was in the house and at our tree.  My mom grabbed her camera and we all crept down the hallway...they were pushing me from behind.  Santa was so busy, he never turned around and my mom snapped a picture of him hunched over putting MY HAMSTER AND A COOL HAMSTER CAGE underneath the tree!!</p>
+
+            <p>So, for all you millennials, there was a time when you didn't immediately SEE photos you took.  You took the film (we can talk about what this is later) to the drug store (we can talk about why a drug store later) and dropped it off to get developed.  A nervous week went by and FINALLY the photos arrived.  I had told all my friends that I had seen Santa and that...I HAD PROOF.  PHOTOS DON'T LIE, right?  When my friends saw the photo, it rocked their world.  THE Santa Claus was in my house and there was NO denying it.</p>
+
+            <p>Fast Forward 20 years.  I'm at a Christmas party at my Mom's house and I'm rocking my newborn baby girl.  My sister-in-law comes up beside me and whispers in my ear "Now that you're all grown up, I guess I can tell you that it was ME who dressed up as Santa and brought you the Hamster that your mom said you couldn't have.  Now, you go and make Christmas magical for your kids!"...and she got up and went back to the kitchen and she never said another word about it.  She was a high school student at the time and was dating my older brother and I guess they felt sorry for me about my mom not wanting me to have a hamster and my friends telling me there was no Santa.  After ALL those years, nobody would tell me who was in that suit that night, but I'm so glad she decided to tell me...in THAT moment, and in THAT way.</p>
+
+            <p>I hope that your Christmas and your holiday break is magical.  Oh, and if you have kids...get them a hamster...well, maybe not...but the gift of belief is a great gift indeed!</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

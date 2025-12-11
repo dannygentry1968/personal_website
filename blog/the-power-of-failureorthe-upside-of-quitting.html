@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Failure…Or…The Upside of Quitting - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">February 17, 2025</div>
+            <h1 class="article-title">The Power of Failure…Or…The Upside of Quitting</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>Have you engaged in the 21st century phenomenon of "Binge Watching" some program on Netflix or some other entertainment streaming platform?  Have you ever found yourself bleary-eyed on the couch at 2 a.m. just telling yourself you will watch just ONE MORE episode because you can't rest until you see what happens next?  Well, this weekend I was the bleary-eyed guy on the couch.</p>
+
+            <p>Was it sports?  Nope.  Was it Star Wars?  Nope, but good guess.  Was it a show about camping or wilderness survival?  Nope, but again, a good guess.  Some of you know that I really like baking, and this weekend I found my jam.  Well, not literal jam, but you know...jam.  I found this show on Netflix called "The Great British Bake Off", and was immediately hooked.  From the first measuring spoon, to the last pathetic mince meat pie, I was totally engrossed.  I NEEDED to know how Liam, Nigel, and Sophie's Dutch Stroopwafels turned out.</p>
+
+            <p>Beyond all of the cool tips I got about the art of baking, I was surprised that I learned a few other things along the way that directly apply to our work as educators.  A few years ago, I read a book by Steven Levitt and Stephen Dubner called, "Think like a Freak".  Some of you are probably saying....NOW that makes sense.  Anyway, I digress.  So, in this book there is a chapter entitled, "The Upside of Quitting." The authors make the argument that we often fall for what is known as the "sunk cost fallacy".  Simply put, this is the mistaken notion that we should see something to conclusion even though we realized along the way that what we were doing was a mistake.  For teachers, imagine giving that GREAT lesson you've prepared so hard for, and then realizing part way in that the kids thought it was terrible and they were not getting what you were teaching.  Sometimes, we go ahead with things in education, KNOWING FULL WELL once we get started, that what we are doing is not working.  The upside of quitting is to stop committing the sunk cost fallacy and learn quit when you realize that something is not going to work.</p>
+
+            <p>Link to FREAKONOMICS Podcast on "The Upside of Quitting"</p>
+
+            <p>So, what does this have to do with a baking show?  Everything!  One thing you know if you are a baker is that once an ingredient has been mixed in, there isn't any way to "un-mix" it.  It's in there and if it isn't supposed to be...well, too bad.  The only thing you can do is to throw it out and start over again; and the quicker the better.  Failure is our friend, and quick failure should be our BEST friend.  That being said, we need to be careful not to abandon new things merely because they are too difficult, or that we don't like them, or that positive results have yet to be documented.  Some things need to be monitored and given some time before failure or success is declared.  We need to be able to distinguish the "implementation dip" from full-blown failure.  This requires some patience and also some experience.  In baking, if your dough hasn't risen in 5 minutes, everything may still turn out okay.  If it's been 45 minutes, well...then something is wrong and it's best to throw it out and start all over.</p>
+
+            <p>Here are the lessons for us as educators as I see it:</p>
+
+            <p>Don't keep doing things that we know are not working, just because we have spent so much time preparing for it OR it is something we have been doing for a long time.</p>
+
+            <p>Proper time spent planning and preparing will make it easier for you to spot the areas of failure when they do happen.</p>
+
+            <p>Don't be afraid to FAIL.  Another way of stating this is...Don't be afraid to TRY!  In fact, you should make failure your friend and embrace it as a marker of areas where you can improve your skill as a teacher.</p>
+
+            <p>We should be teaching our students that failure is OKAY, and give them plenty of opportunities to keep trying until they master the content.</p>
+
+            <p>One thing I learned from watching the contestants in this show was that each of them did the best they could with the skills and abilities that they had.  Not everyone was an expert baker.  Some of the contestants were novices, and others had been baking for years.  What they all shared was a love for baking, and the desire to test and improve their skills.  When faced with a challenge, they just dove in and got started.  They didn't complain about the ingredients they were given, the amount of time they had, or the recipe.  They just tried their best.  If it didn't go as they had hoped (like the lady who spent 4 hours on an extravagant cake, only to watch it fall over in the oven and destroy itself), they either threw it out and started over, or they learned from their mistakes and tried harder next time.</p>
+
+            <p>As your principal, you have my absolute permission to fail in the honest pursuit of teaching your students and making sure that they are successful.  Once you fail, you also have the responsibility to STOP doing things that you know are not working, and then examine the data to determine what your next plan of action will be to reach ALL of your students.  It's okay to quit when you know something isn't going to work.  As Henry Ford said, "Failure is simply the opportunity to begin again, this time more intelligently."  So, go on...fail, I dare you!</p>
+
+            <p>Devotions upon Emergent Occasions</p>
+
+            <p>No man is an island entire of itself; every man</p>
+
+            <p>is a piece of the continent, a part of the main;</p>
+
+            <p>if a clod be washed away by the sea, Europe</p>
+
+            <p>is the less, as well as if a promontory were, as</p>
+
+            <p>well as any manner of thy friends or of thine</p>
+
+            <p>own were; any man's death diminishes me,</p>
+
+            <p>because I am involved in mankind.</p>
+
+            <p>And therefore never send to know for whom</p>
+
+            <p>the bell tolls; it tolls for thee.</p>
+
+            <p>Before Ginger and I moved out here to California to be near our daughter, we had one set of friends who lived in the Bay Area.  Leigh Ann and Paul, lived down in Mountainview where Paul worked as a software engineer at Google.  Leigh Ann was Ginger's friend from next door while they were growing up in the north Houston suburbs.  She and her husband had moved out to California with their baby boy, Brandon, back in 2002.  With the advent of social media, my wife and her old friend re-connected and stayed in touch frequently.  We watched Brandon grow up through Facebook posts, and enjoyed reading about their adventures and hiking trips in the hills around Northern California.  In 2013 when Hannah moved to San Francisco, we connected her to Leigh Ann and Paul as surrogate parents.  We were glad to know that there was someone we knew here that could look in on Hannah or help her out in an emergency if need be.  Hannah stayed at their house on a few occasions; once after attending a late night concert at the Shoreline Amphitheater...literally just a stone's throw from their house.  When I would drive Hannah back to California from Texas or when we would fly out to visit her, Leigh Ann, Paul, and Brandon always opened their home to us as a place to stay.  We enjoyed their friendship and hospitality.  When I started looking for a job out here in California, I stayed with them for a week while I interviewed in different places, and then again when I had my second interview for THIS job.  Since we moved out here, we have been on some trips to Napa with them and have met for dinner a few times both here in Vacaville and in Mountainview.  Although we are all busy, it has been nice to spend some time with them when we could.</p>
+
+            <p>On August 5th, we were at home and we started to see some strange posts on Facebook from Leigh Ann.  It seemed like something was going on.  Shortly thereafter, Leigh Ann posted that Brandon had passed away.  We were in disbelief and shock; surely this was a mistake we thought.  We made contact with Leigh Ann, and she confirmed it was true.  She didn't give any details and we didn't ask. Ginger was leaving in the morning to go on a trip with her sister and by then, my brother had taken a turn for the worst and passed away on Tuesday morning.  I headed for Texas, and our hearts were heavy for our family and for our friends. Hannah went to the funeral in Mountainview the following Saturday and represented our family.</p>
+
+            <p>Brandon was 16 years old and their only child.  He was in the marching band and played the clarinet. His mom had been a former band director in Texas, and was very proud of her son.  He was kind of a "skater dude" with long brown hair and beautiful blue eyes.  He was quiet and loved to play video games and hang out with his friends.  He was by all accounts, a typical teenager.  From the moment we found out about his passing, Ginger had been texting Leigh Ann and the story of his passing gradually emerged.  Leigh Ann shared with us that Brandon had began suffering from depression back in the fall of last year. He later developed a Social Anxiety Disorder, and had actually attempted suicide back around Christmastime and again in March.  He had been in therapy and was also taking medication for depression since the first incident.  The parents thought he was getting better, and his therapist had told them that Brandon thought he was improving.  They could see some signs of the old Brandon starting to come back.  A week later he was gone.</p>
+
+            <p>Brandon wasn't having any trouble at school, he wasn't a target of bullies, there was no girlfriend or drug problems.  He was just a kid who suffered from depression and many times felt like he was alone and unloved by the world.  His brain wouldn't let him see the reality that he WAS loved, as evidenced by the hundreds of grief-stricken kids who showed up at his funeral, and by his devastated family members.</p>
+
+            <p>Ginger and I spent yesterday afternoon with our friends at their home in Mountainview.  I grilled hamburgers for them on their grill and we shared a bottle of wine.  We all hugged and cried.  Leigh Ann took us into Brandon's room.  Nothing had been touched, not even the laundry.  She hugged his clothes and sniffed them.  Paul showed us his favorite hoodie.  Ginger is a quilter, and agreed to make a quilt out of Brandon's shirts whenever Leigh Ann decided she was ready to do that; next week or next year, or whenever.  For most parents, the thought of losing a child is THE most devastating thing you can think of.  We are not supposed to outlive our children!  Leigh Ann and Paul have a long road ahead of them as they rely on their faith, family, and friends to build some semblance of their lives back.</p>
+
+            <p>On the way back home last night, we didn't do much talking.  Both of us were mostly thinking.  One thought I had was that Brandon had many teachers throughout his years in school.  Some of those teachers he had during the time that he was suffering from depression.  Is there anything that any of these teachers or school staff could have done to help Brandon; could they maybe have caught it earlier or seen signs?  Every school has multiple Brandons, the question is how do we identify them and what can we realistically do to help them so that no other families have to go through what my friends are going through?  I did a little research, and the statistics on this topic are disturbing and sobering.  Depression, mental illness, and behavioral disorders, among adolescents and children are now very common.  The Centers for Disease Control and Prevention reports that 1 in 5 American children ages 3 through 17 (about 15 million) have a diagnosable mental, emotional or behavioral disorder in a given year.  Only 20 percent of these children are ever diagnosed and receive treatment; 80 percent (about 12 million) aren't receiving treatment.</p>
+
+            <p>Facing such a crisis, as and educational leader, the best advice I can give to you as a teacher, is to focus on relationship building with your students; especially those students who are maybe a bit different or "not so easy to love".  They are the ones who need us the most.  We may not be specifically trained in how to deal with these students, but we all have arms to hug with, ears to listen to what they say, eyes to see the positive things in them, and hearts to love them.</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

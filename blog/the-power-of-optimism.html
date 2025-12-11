@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Optimism - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">March 17, 2025</div>
+            <h1 class="article-title">The Power of Optimism</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>Surprise! Despite what you may believe or see on television or online, the world is actually a MUCH better place than it has ever been.  By almost any metric, human beings have it better today than at any other time in the history of our species.  It is safe to say, that despite the fact that too many people are still living in terrible conditions and circumstances, more people are doing better than ever before in history.</p>
+
+            <p>As educators, we have played a major role in this improvement and can therefore congratulate ourselves on the world our profession has helped to create.  While we still have challenges in front of us, we should occasionally glance back down the mountain of human progress we have climbed so far, and marvel at our collective achievements.</p>
+
+            <p>In his recently published book, Enlightenment Now, Harvard psychology professor Steven Pinker discussed numerous reasons why our modern age is truly an age of wonder and progress.  Here are just TEN of the improvements he detailed concerning poverty rates, infant mortality, and education:</p>
+
+            <p>1. Over the last 20 years, the proportion of people living in extreme poverty has almost been cut in half.</p>
+
+            <p>2. Just 200 years ago, 85% of the world population lived in extreme poverty. 20 years ago it was 29%. Today only 9% live in extreme poverty while the majority of people (75%) around the globe live in middle-income countries.</p>
+
+            <p>3. In 1997, 42% of the population of both India and China were living in extreme poverty. By 2017 that share had dropped to 12% and less than 1% for India and China, respectively. That means almost three-quarters of a billion fewer people are living in extreme poverty in these two countries than there were just 20 years earlier.</p>
+
+            <p>4. In 1800, among all babies who were ever born, roughly half died during their childhood. Life expectancy was just 30 years and no country had a life expectancy above 40. Life expectancy at birth was only 45 years in 1870. The average life expectancy around the world today is 72.</p>
+
+            <p>5. In 1940, less than 5% of Americans held a bachelor’s degree. By 2015, it was up to one-third.</p>
+
+            <p>6. The literacy rate from the 17th to 19th century was just one-eighth of the global population. From that point on the world’s literacy rate doubled in the next century and quadrupled in the century after that, so now 83% of the world is literate..</p>
+
+            <p>7. The high school graduation rate was just 9% in 1910. It jumped to 52% by 1940 and 83% today.</p>
+
+            <p>8. Early in the 19th century, 12% of the world could read and write. Today it’s 83%.</p>
+
+            <p>9. In 1820, more than 80% of the world was unschooled. It’s estimated that by the end of the century this number will be close to zero.</p>
+
+            <p>10. In 1920, just 28% of American teenagers ages 14-17 were in high school. The latest stats show over 80% graduated high school, of whom 70% went on to college.</p>
+
+            <p>I like to learn about history.  It's an interest that was passed down to me from my dad, who was kind of an amateur historian.  He possessed a wealth of information that has sadly passed away with him.  I wish I would have had the foresight to record it or write it all down.  However, as a result of that persistent interest, I have done lots of research on our family history.  The photo shown above is of my Great-Great Grandparents, Minos B. Gentry and Loumiza Arnold-Gentry.</p>
+
+            <p>The photo above was taken around 1900 in Texas.  My great-great grandparents came to Texas after several of their children had moved there in the late 1800's.  Back in those days, people cared for their elderly parents in their homes since there were no Assisted Living facilities or nursing homes.  I suppose they were spending their last years in Texas with their children.  Upon their deaths, they were both buried back near their home in Bedford County, Tennessee.  I don't know much about them, except that he was born in 1838 and that he and Loumiza had 13 children; seven of whom lived to adulthood.  One of those children, George Washington Gentry, was born in 1885 and lived to be quite elderly (even by today's standards), passing away in 1977 at the age of 92.</p>
+
+            <p>The Gentry's were a pioneer family.  Minos' Great-Grandfather, Nicholas Gentry, was born in 1751 in Hanover, Virginia.  He married Elizabeth Gibson when they were both 15 years old.  By 1780, they had obtained 200 acres of land at Fort Nashborough (now Nashville, Tennessee) and were among the original settlers of that area.  He and his son, John, were both killed when the fort was attacked by the Chickamauga Cherokee in 1782.</p>
+
+            <p>Every time I read about the history of the pioneers, it amazes me how strong they were both physically and mentally.  I can't imagine the mental toll of what losing ONE child would be like, let alone losing SIX. The physical work they had to do JUST to survive is unthinkable by today's standards.  The dangers and hardships they faced were incredible, yet they stuck to the task and remained optimistic about the future.  They didn't sit around and wait for things to happen or to be handed to them; they went out and carved their own path through the wilderness.  However, despite all of those challenges, they managed to survive and make things a bit better for the next generation.  Bit by bit, our ancestors worked to create the modern world that we now enjoy.</p>
+
+            <p>As teachers, we are often guilty of focusing too much on the HERE and NOW rather than seeing the long-term.  Too often, we see out students only as they are now, not as how we would like them to be when they leave our class or when they finish their senior year.  It's very easy to get caught up in this way of thinking because our students require ALL of our focus and energy right now.  It's hard to find a spare moment to ponder the future when your students have so many immediate needs.  That being said, from time to time, we need to examine the progress that we have made with our students, and to celebrate their growth and achievement.  We need to see our students not for the deficits they have today, but imagine them with all the skills they will have gained (with your help) at the end of the school year.  One way you can do this is by helping your students to embrace a Growth Mindset that instills the notion that PROGRESS is the goal, and that even though they may face temporary difficulty with a concept or skill, they CAN and WILL be successful.</p>
+
+            <p>If history has taught us anything, it is that Optimism gives us the power to create a better and brighter future!  It worked for the pioneers, and it will work for you!</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

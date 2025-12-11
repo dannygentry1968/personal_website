@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Service - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">May 12, 2025</div>
+            <h1 class="article-title">The Power of Service</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>"What we do for ourselves dies with us.  What we do for others and the world remains, and is immortal."  Albert Pine</p>
+
+            <p>This summer was a difficult one for me, full of literal highs and lows.  In June, I made my annual overland trek to Texas, dubbed by my family as the "Magical Mystery Tour".  Every year, I chart a new path going and coming, and I try to spend some time in out of the way places, seeing things and experiencing things that you just can't do by sticking to the Interstate or looking down from 30,000 feet.  I spent one night on the outskirts of Area 51 in Rachel, Nevada.  I spent another night along the Colorado River at Lee's Ferry.  I got my kicks on Route 66 and stayed in a "retro" motel in New Mexico.  I spent some quality time with my mom and my brothers, and celebrated my 50th birthday with a "Star Wars" party (go figure, right?).  On the return trip, I explored the lonely back highways of Colorado and Utah.  I did lots of writing, and hopefully will publish some of the stories I wrote.</p>
+
+            <p>When I got back to California, I soon heard that my brother had taken a turn for the worst and was in the hospital.  I had just shared a great meal with him in a wonderful little Texas cafe.  We all ate Catfish, fried okra, collard greens, and pinto beans; and marveled at how you can't get this in California.  We had a good time.  We laughed, we cried, and I told him I would see him later.</p>
+
+            <p>On August 7th, I made another trip back to Texas.  This one was not magical or mysterious.  I went back to pay my respects to my brother, my hero, my friend.  I went there to be with my mom, who had just lost her son.  No matter how old you are, that's the one thing that you should never have to do.  We held his funeral on August 10th.  It started to rain just before the service, and rained until we had finished the graveside service.  The sky cleared and a giant rainbow filled the sky and greeted us as we left the fire station where the luncheon was held for the family.  We laughed at how Don must have ordered the rain for his funeral because he didn't want there to be any fires that day.</p>
+
+            <p>My brother served the residents of Ellis County and our little hometown for over 40 years.  He began as a volunteer fireman, and ended as the CEO of the Emergency Services District.  He managed a huge budget, purchased and maintained lots of expensive equipment, organized training for the volunteer firemen, and responded to calls as "The Chief".  He singlehandedly built the organization and recently oversaw the construction of a new multimillion dollar facility for the Emergency District.  It was his crowning achievement, and the thing he was most proud of outside of his family.</p>
+
+            <p>As we drove in the funeral procession, two local fire departments had brought their trucks and created an arch, from which they hung a huge American flag.  Dozens of police and firemen lined the road in the pouring rain and stood at attention as the firetruck carrying his body passed by.  It was a fitting tribute to a man who had devoted his life to the service of others.  Many times when I would be at his house or he would be at a family function, the code would go off on his radio or scanner and he would get up from the chair or dinner table to go and help someone else; probably a stranger, who was in trouble.  When he went out the door, there was always a chance that he wouldn't be coming back.  Nobody knew that more than his wife, Kay, and his kids Amy, Michael, and Brad.</p>
+
+            <p>At the funeral, a couple of retired firefighters spoke and told the story of the "final call or final alarm".  In the old days, firemen communicated using signal bells.  The firemen would strike the bells a certain number of times to communicate different things.  The "final alarm" consists of two alarms common to firemen of the past.  The first is the "eleven, or one-one" alarm.  It consists of two loud hits on the bell.  This means that "The fire is out, all is safe".  The second part of the "final alarm" is the "sixty six, or six - six" call.  This consists of six hits on the bell, followed by six more.  This means that "everyone go back to the station.  In the vernacular of firemen, the final call means "Our work is done, the danger has passed, now it's time to go home.  The final part of the funeral consists of the county radio dispatcher broadcasting that my brother has answered his final alarm and is now "sixty six".  A bagpiper slowly played "Amazing Grace", while walking away into the distance.</p>
+
+            <p>I've had a week or so to think about all of this, and I have concluded that my brother was an example of what it truly means to live your life in the service of others.  As educators, sometimes we get fooled into thinking that we are just like any other job; like an accountant, software engineer, or real estate agent.  We get caught up in thinking about all the "small stuff" that competes for our attention, and we miss the BIG picture of what we are really doing.  As educators, we have chosen to serve our community, by serving kids and their families.  It really is that simple.  The work we do is tough and often thankless.  No, we are not running into burning buildings and saving people; but we are in a way saving people by giving them the skills they need to have a happy and successful life.  When I come to work everyday, I don't feel like I'm coming to a JOB, I feel like I'm coming to a place where I can help people.  I don't feel that this is a job so much as it is a calling; a calling to a life of service.</p>
+
+            <p>One thing we can all know for sure, life is terminal.  One day we will be the one for whom the funeral services will be held.  I don't know about you, but when it is my time to go, I'm not expecting an arch with an American flag, people standing along the highway out in the rain, and bagpipers playing "Amazing Grace". To me, those things are reserved for Heroes, like my brother, who daily risked their lives to serve.  What I do hope is that someone will be there to say that in addition to being a good man who loved his family, that I dedicated my professional life to making a positive difference in the lives of children.</p>
+
+            <p>Stephen Covey, in his book Seven Habits of Highly Effective People, encourages his readers to "Begin with the end in mind".  This week, I encourage each of you to think about how you would like your life to be remembered.  The good news is that each day we wake up, we can have a new beginning.  We can make new and better choices of how we want to live our lives; what type of parent we want to be, what type of son or daughter, husband or wife, or TEACHER we want to be.  Each day is a gift and an opportunity, don't waste it.  We can either choose to make a difference or choose to get caught up in all the minutia and "small stuff" that holds us back from being truly amazing!  I choose to serve.  I choose to be amazing!! I hope you will do the same!</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

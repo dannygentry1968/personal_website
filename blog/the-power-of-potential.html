@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Potential - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">April 14, 2025</div>
+            <h1 class="article-title">The Power of Potential</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>One isn't necessarily born with courage, but one is born with potential. Without courage, we cannot practice any other virtue with consistency. We can't be kind, true, merciful, generous, or honest.</p>
+
+            <p>Every day on my way to work, I stop in at the coffee shop for a morning shot of tea.  This morning when I pulled up, I saw this young gentleman asleep at the outside table with his very full suitcase next to him....with this sign.  My heart sank when I saw his sign, and it continues to bother me.  California has a huge and growing homeless problem, and I think that so many times we become accustomed to seeing it that we really don't SEE it anymore; it just fades into the background. It's kind of like this with our students sometimes.  We see SO many students that we fail to SEE the individual ones who need us the most holding up their "SIGNS" for us to read.</p>
+
+            <p>I was struck by the profundity of the statement that he chose to write on his sign.  I'm sure he really DIDN'T think that his life would turn out like this.  I'm sure that when he was a kid, the answers he would have about his future would be similar to those most of our students would give if asked.  "When I grow up I want to be a (insert something great and noble)" Nobody ever says that they want to grow up hopeless and live on the streets.  No parent wants that for their child.  In truth, all we are when we are born is POTENTIAL.  This is both exciting and frightful.</p>
+
+            <p>The truth is that NONE of us really knows how our lives will turn out.  When we are young, our lives are only filled with potential for what we will become.  When we are old, many times what we are left with are the regrets about potential that was wasted. The future is both our friend and our enemy.  It is simultaneously full of promise and peril; order and chaos.</p>
+
+            <p>What really disturbs me as an educator, is that this young man was once a student.  Something happened to him, and now he's in this situation....writing signs to the world.  Something went wrong...way wrong.  Everyone has a story to tell, and I'm sure that in the telling of his story, this young man has the answer to how he reached this spot in his life.  I just hope he knows that that today is just the present and that the future is not without hope and that failure is not defeat.</p>
+
+            <p>Many of you know that the reason why we moved to California was because my daughter was a teacher in the Tenderloin section of San Francisco.  Before we made the move, I came out to visit her a few times and delivered some donations to her school from the families and students of my school in Texas.  We always managed to fill up an entire van full of school supplies and clothing for the students.  Those donations were much needed and much appreciated by the school and the students.  One of the things we did on those trips was to help volunteers pass out meals to people who were living in the Single Room Only (SRO) "hotels" in the neighborhood.  We carried cardboard boxes filled with hot food trays up narrow flights of stairs and knocked on doors to see if anyone needed a hot meal.  It was always amazing the people who you would meet and the stories they told.</p>
+
+            <p>On one occasion, I had the pleasure of meeting "Bob".  He was a man in his 50's who looked like an average middle-aged man; and honestly, a little out of place in the heart of the Tenderloin.  I struck up a conversation with him in the lobby of the SRO hotel while I was waiting on the rest of the team to come down from their deliveries.  We talked about where we were from, and I found out that we had some things in common.  I asked him how he ended up "down here".  He told me about how he used to be a musician and was married and lived in a nice house.  He had gone to college and studied music but wound up getting addicted to drugs.  His wife kicked him out, so he bounced around for years until he lost his friends due to his addiction, then one day he found himself here in the SROs.</p>
+
+            <p>After awhile, he said, "Hey, it's been awhile since I've REALLY talked to anybody.  If you have a minute I'd like to play you a song.  I'll run up to my room and get my clarinet and I'll be right down."  About that time, the rest of our group came and wanted to leave.  I told them, no, I was waiting for "Bob" to come down and play a song.  In a few minutes, Bob was back with his clarinet.  I can still hear the music in my mind as clear today as then.  I didn't recognize the melody, but it was beautiful beyond words. Everyone in that dark and dingy SRO lobby (and I mean everybody from the night desk worker to the hardcore addicts nearby) stopped DEAD in their tracks and LISTENED.  We were all awestruck.  It was proof that even in the darkest of places, beauty and hope can be found...if only you have the desire and courage to find it.  Everybody cried.  Everybody hugged Bob, Bob hugged back, and we all left changed.  Bob spoke to us using the language that he knew best; music.  He also spoke to our hearts.</p>
+
+            <p>Like the young man in the picture, Bob never thought his life would end up like it did.  I'm sure that like Bob, this young man with the sign has something beautiful inside him that is yearning to be expressed.  As educators, we cannot see into the future for our students, but we can sure do our best to prepare them for it.  We can do an even better job of preparation when we SEE each student as having VAST POTENTIAL within them.</p>
+
+            <p>The POWER of POTENTIAL is staggering.  Are YOU living up to your POTENTIAL as a teacher, and do YOU notice, nourish, and develop the POTENTIAL of ALL of your students (especially those who already seem to be lacking)?  Every student has something inside them that is beautiful like Bob, and many of your students are holding up "signs" like the young man in the photo.  YOU have the POTENTIAL to impact each of them in a profound and positive way...the future awaits!!</p>
+
+            <p>Have an AWESOME WEEK!!!</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

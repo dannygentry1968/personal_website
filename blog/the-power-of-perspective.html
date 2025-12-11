@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Perspective - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">April 07, 2025</div>
+            <h1 class="article-title">The Power of Perspective</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>You never really understand a person until you consider things from his point of view . . . until you climb into his skin and walk around in it." Atticus Finch</p>
+
+            <p>This important snippet of conversation from To Kill a Mockingbird, finds Atticus giving Scout the crucial piece of moral advice that governs her development throughout the book. The simple wisdom of Atticus’s words reflects the uncomplicated manner in which he guides himself by this sole principle.  His ability to relate to his children is manifested in his restatement of this principle in terms that Scout can understand (“climb into his skin and walk around in it”).  Scout struggles, with varying degrees of success, to put Atticus’s advice into practice and to live with sympathy and understanding toward others.  At the end of the book, she succeeds in comprehending Boo Radley’s perspective, fulfilling Atticus’s advice.</p>
+
+            <p>As educators, it is helpful for us to consider things from the point of view of our students.  Too often, we are guilty of only seeing things from out adult perspective.  Our students lack our knowledge, experience, and motivations.  They are still "working things out" and trying to understand the complex world around them and their place within it.  Instead of trying to get our students to see things from an adult perspective, it might be far easier for us to try to consider things from theirs; after all, we were kids once too!</p>
+
+            <p>So, how can we start to see things from our students' perspective?  Ask them, then take time to listen.  You might be surprised at what you find out.</p>
+
+            <p>Great Stories Have Great Endings</p>
+
+            <p>"If you're going to have a story, have a big story or none at all." Joseph Campbell</p>
+
+            <p>Joseph Campbell is known as the "Father of Modern Mythology".  In his book, The Hero With A Thousand Faces, he describes what is known as "The Hero's Journey".  It is a familiar story, told over and over again; with only the characters and the setting changing.  It goes something like this...</p>
+
+            <p>1. A character is in a zone of comfort</p>
+
+            <p>2. But they want something</p>
+
+            <p>3. They enter an unfamiliar situation</p>
+
+            <p>5. Get what they wanted</p>
+
+            <p>6. Pay a heavy price for it</p>
+
+            <p>7. Then return to their familiar situation</p>
+
+            <p>Most of us can identify with this cycle; and that's why its so successful.  We are instinctively drawn to it because of it's familiarity to us.  We know that in order for us to accomplish something great, we have to go after it, and in the process of doing so we will often pay a heavy price for it.  We will also come away from the experience changed in some way.</p>
+
+            <p>Each school year is an exciting journey.  We go through many situations that we have to adapt to in order to achieve the goals we have for our ourselves and our students.  Sometimes we have to pay a heavy price for doing so.  Sometimes it means sleepless nights of worry, time away from our families, or just the ravages of stress.  The bottom line is that everything worth having comes at a cost.</p>
+
+            <p>We are about to finish the school year and return (so to speak) to the "normal" world for a few weeks. Before we do, we might take some time to reflect on the price we paid this year for the things we were able to achieve.  We might also reflect on how WE have changed as a result of our experiences.</p>
+
+            <p>Every great story has a great ending....make sure that the story of your 2019-2020 school year has a great ending!</p>
+
+            <p>Never Underestimate Anyone!</p>
+
+            <p>The internet cat superstar....Tardar Sauce....AKA Grumpy Cat, went to kitty heaven this week.  Anyone who is a cat lover (like me) took a few minutes to mourn her passing.  Tardar Sauce's face appeared grumpy because she had a form of feline dwarfism.  Though her human parents, the Bundesens, described her as a "normal sized domestic short hair cat", Tardar Sauce was undersized and had hind legs that are "a bit different".  Both she and her brother, Pokey, were born with "a flat face, bubble eyes, and a short tail".  Although she had a "grumpy" appearance and was called "Grumpy Cat", according to the family, ninety-nine percent of the time she is just a regular cat.  Tardar Sauce was the subject of a meme that went viral on the internet in 2012.  She became the "spokescat" for Friskies and Honey Nut Cheerios. Her images, endorsements, and personal appearances earned she and her family in the tens of millions of dollars.</p>
+
+            <p>Tardar Sauce serves as a lesson for us all...especially educators.  We have many students who may look or act differently.  By all appearances, they may not seem to have much hope for success.  However, we have been warned to "never judge a book by it's cover".  Even though one of our students may be having a tough time of it today, that doesn't mean that things won't turn around for them in the future.  Our job is to keep on helping and keep cheering them on to be the best they can be.  You never know....something wonderful might happen at any moment and change their life forever!</p>
+
+            <p>In The Choice Between Happiness and Meaning, I Choose Meaning</p>
+
+            <p>Around the time Emily Esfahani Smith went off to college, she began searching for deeper meaning in her life.  She would eventually find it in researching the topic itself, ultimately reaching graduate school to study the psychology of happiness.</p>
+
+            <p>More recently, Esfahani Smith toured the United States, asking hundreds of people what they considered important in their lives. The answers she received didn't have much to do with happiness, fame, or fortune.</p>
+
+            <p>"The most meaningful lives, I've learned, are often not the extraordinary ones," Esfahani Smith recently wrote in the New York Times. "They're the ordinary ones lived with dignity."</p>
+
+            <p>Esfahani Smith captured these sentiments in her recent TED talk, "There's more to life than being happy," and book, "The Power of Meaning: Finding Fulfillment in a World Obsessed Happiness."</p>
+
+            <p>In both, she highlighted how the national suicide rate in the US has been steadily increasing over the past few decades — now at a 30-year high— despite considerable improvements in quality of life.</p>
+
+            <p>"Even though life is getting objectively better by nearly every conceivable standard, more people feel hopeless, depressed, and alone," she told the crowd at the TED Conference this past April.</p>
+
+            <p>According to Esfehani, cultivating meaning comes down to four key pillars. The first two, belonging and purpose, are straightforward, while the second two, transcendence and storytelling, require a bit more explanation.</p>
+
+            <p>Esfahani has found people who feel a sense of belonging — in their family, community, school, or elsewhere — tend to believe life is more worth living. It's richer. Similarly, people who say they've find their calling more often view life as fulfilling. Esfahani Smith cautions, however, that purpose tends to be fulfilling mainly when it involves being selfless.</p>
+
+            <p>"The key to purpose is using your strengths to serve others," she said in her TED talk. It doesn't matter whether those strengths include carving a small gift for a family member or managing millions of dollars in personal assets.</p>
+
+            <p>Transcendence involves getting into a mental state of complete focus and engagement. Psychologists call this "flow." For some, it means painting or sculpting. Others may get the same joy from gardening or sports. Esfahani Smith said the important thing is to lose yourself — literally, your self — in the activity you choose.</p>
+
+            <p>Finally, storytelling helps people create meaning because it allows people to create, edit, and transform the story of their lives. People who have found deep meaning reflect on how they came to be themselves, and how their story may continue in the future, Esfahani Smith found.</p>
+
+            <p>Those four pillars coalesce into a life that is rich in more ways than one. People who derive meaning from their hobbies and stay engaged with the people around them more often report enjoying the arc of their story than people chasing riches.</p>
+
+            <p>Life might not always be a happy journey, Esfahani Smith's work suggests, but it can be a rewarding one.</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>

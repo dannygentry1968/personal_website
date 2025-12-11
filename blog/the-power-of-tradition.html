@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Tradition - Dr. Danny Gentry</title>
+    <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        /* Navigation between posts */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--cream);
+        }
+        
+        .nav-post {
+            text-decoration: none;
+            color: var(--primary-brown);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-post:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-terracotta);
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">July 07, 2025</div>
+            <h1 class="article-title">The Power of Tradition</h1>
+        </header>
+        
+        <div class="article-content">
+            <p>A tradition is a belief or behavior passed down within a group or society with symbolic meaning or special significance with origins in the past.  Do you have traditions in your classroom?  If haven't yet formed any traditions with your students, or yourself as a teacher, you might try to start developing some.  Here are some really great reasons WHY you should look into it.</p>
+
+            <p>Tradition contributes a sense of comfort and belonging.  This is a huge help towards building relationships with, and among, your students.</p>
+
+            <p>Traditions enable groups of people to communicate through shared rituals.</p>
+
+            <p>Tradition reinforces values such as freedom, faith, integrity, a good education, personal responsibility, a strong work ethic, and the value of being selfless.</p>
+
+            <p>These are some things that I believe we could all use a bit more of these days; especially in our classrooms!</p>
+
+            <p>Traditions are universal and form the bedrock of culture, and that's what makes it SO cool to live in a diverse culture like the one we share here in United States.  We get to learn about SO many different traditions from all around the world.  Being from the South, I have one tradition that I would like to share with you that we southerners are VERY serious about:   New Year's Day....the tradition of eating black-eyed peas to promote "Good Luck" in the upcoming new year.</p>
+
+            <p>There are several legends that explain how this tradition got started, and it's really interesting to see how these legends have converged.  The first legend tells that it was the practice of Sephardic Jewish Immigrants in the south, to eat black-eyed peas on Rosh Hashanah (the Jewish New Year) and that the practice spread to others in the community.  While another legend tells that the practice of eating black-eyed peas began with the African slaves, since the plant was first domesticated in West Africa and later brought to the Americas via the slave ships.  The peas became a staple of the diet of the slaves, and the reason they are now considered "lucky" is that that's what they were eating in celebration on the day of the Emancipation Proclamation which was announced on January 1, 1863.  The final legend is that when General Sherman was sweeping his army through the south near the end of the Civil War in 1864, the Union soldiers overlooked the black-eyed pea as a potential food source for the local population since they thought it "unfit" for human consumption.  When everything else was burned and plundered, there were lots of black-eyed peas left behind to help stave off starvation from the depredations of war.</p>
+
+            <p>Every New Year, millions of Southerners of all races and religions share in the tradition of eating a big helping of black-eyed peas in order to ensure "good luck" in the coming year.  It's usually served with a side of Collard Greens and some homemade cornbread.  The greens symbolize growth and new beginnings, and the gold color of the cornbread symbolizes wealth and prosperity.</p>
+
+            <p>As far back as I can remember, I have faithfully eaten a bowl of black-eyed peas every New Years Day.  When my daughter was young, she was a picky eater like most kids are, so we had to "bribe" her to even eat ONE pea.  We didn't dare to allow her NOT to eat some, for fear that she would miss out on her good luck.   Hopefully, she will carry on the tradition; but she will have to learn to cook first!  Since we have moved to California, I've learned that this tradition is not a common one outside of the south.  In fact, finding black-eyed peas at the grocery store is sometimes difficult.  However, I managed to find a source and have made sure to have them on hand just in case.  When it comes to black-eyed pea eatin', y'all don't know what your missing!!!</p>
+
+            <p>Every year, I make a special pot of black-eyed peas for New Year's Day.  As most of your know, this past year has been a difficult one for me and my family, so we took special care to eat an EXTRA large helping to ensure extra good luck in the coming year.  I also changed the recipe that I've always used, and improvised a new one that I will share with you below.  It turned out that this batch of peas were EXTRA tasty, so I hope that is a good sign for the luck that is sure to come!  The picture above is of MY crockpot of peas from this year. Despite their undeserved reputation as being inedible, I assure you that (when prepared properly) they are delicious...especially with cornbread and greens!</p>
+
+            <p>Dr. Gentry's Southern Black-Eyed Peas</p>
+
+            <p>1 pound bag of dried black-eyed peas</p>
+
+            <p>1 10oz can of Ro-Tel (Original) diced tomatoes and green chilis</p>
+
+            <p>4 slices of un-cured thick-cut bacon (fried, drained, and chopped in 1cm wide strips)</p>
+
+            <p>1) Sort and wash peas, then soak overnight in a pan of water. (add just enough water to beans to cover by an inch or 2)</p>
+
+            <p>2) Drain peas and add them to your crockpot.</p>
+
+            <p>3) Add can of Ro-Tel and stir together with peas.</p>
+
+            <p>4) Add the pre-cooked and pre-cut strips of un-cured bacon.</p>
+
+            <p>5) Add approximately 1 tbsp of Salt and 1 tbsp of pepper.</p>
+
+            <p>6) Add water enough to cover peas and stir.</p>
+
+            <p>7) Set Crockpot on low and let cook for 8 hours.  Stir frequently and watch to ensure they don't dry out.  Add water as necessary (I usually don't have to add water, but your crockpot may be warmer than mine so be careful).</p>
+
+            <p>8) About an hour before serving, lower temperature to Warm, and then season peas with salt and pepper to taste.</p>
+
+            <p>9) Serve warm with cornbread.  Enjoy!</p>
+
+            <p>10) TIP - I have found that these peas are much better after they have been placed in the fridge and left overnight, then re-heated.  This gives the peas some time to absorb the juices and flavors.</p>
+
+
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved.</p>
+    </footer>
+</body>
+</html>
