@@ -7,9 +7,9 @@
     <meta name="description" content="Reflections on education, leadership, and life by Dr. Danny Gentry - Former principal and educational leader.">
     
     <!-- Fonts -->
-    <link rel="preconnect" href="blog/https://fonts.googleapis.com">
-    <link rel="preconnect" href="blog/https://fonts.gstatic.com" crossorigin>
-    <link href="blog/https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -110,70 +110,100 @@
             margin: 0 auto;
         }
         
-        /* Blog Grid */
+        /* Blog Container */
         .blog-container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
         
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2.5rem;
+        /* Blog Article List */
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
         }
         
-        .blog-card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: var(--transition-smooth);
-            border-left: 4px solid var(--accent-terracotta);
+        .blog-article {
+            border-bottom: 2px solid var(--cream);
+            padding-bottom: 2.5rem;
         }
         
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        .blog-article:last-child {
+            border-bottom: none;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
         
         .blog-date {
             color: var(--accent-terracotta);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 0.8rem;
+        }
+        
+        .blog-divider {
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-terracotta);
         }
         
         .blog-title {
             font-family: var(--font-serif);
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: var(--primary-dark);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             line-height: 1.3;
+            transition: var(--transition-smooth);
         }
         
-        .blog-excerpt {
-            color: var(--primary-brown);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
+        .blog-article a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .blog-article a:hover .blog-title {
+            color: var(--accent-terracotta);
         }
         
         .read-more {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             color: var(--accent-terracotta);
             text-decoration: none;
             font-weight: 600;
+            font-size: 1rem;
             transition: var(--transition-smooth);
         }
         
         .read-more:hover {
+            gap: 0.8rem;
             color: #B54D2F;
         }
         
         .read-more::after {
-            content: ' →';
+            content: '→';
+            font-size: 1.2rem;
+        }
+        
+        /* No posts message */
+        .no-posts {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--primary-brown);
+        }
+        
+        .no-posts h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
         
         /* Footer */
@@ -182,6 +212,7 @@
             color: var(--light-tan);
             padding: 3rem 2rem;
             text-align: center;
+            margin-top: 4rem;
         }
         
         footer a {
@@ -194,8 +225,8 @@
                 font-size: 2.5rem;
             }
             
-            .blog-grid {
-                grid-template-columns: 1fr;
+            .blog-title {
+                font-size: 1.8rem;
             }
             
             .nav-links {
@@ -208,13 +239,13 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="blog/index.html" class="logo">Dr. Danny Gentry</a>
+            <a href="index.html" class="logo">Dr. Danny Gentry</a>
             <ul class="nav-links">
-                <li><a href="blog/index.html">Home</a></li>
-                <li><a href="blog/index.html#about">About</a></li>
-                <li><a href="blog/index.html#books">Books</a></li>
-                <li><a href="blog/reflections.html">Reflections</a></li>
-                <li><a href="blog/index.html#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#books">Books</a></li>
+                <li><a href="reflections.html">Reflections</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -228,207 +259,409 @@
         </p>
     </section>
 
-    <!-- Blog Grid -->
+    <!-- Blog List -->
     <div class="blog-container">
-        <div class="blog-grid">
-            <article class="blog-card">
-                <div class="blog-date">January 06, 2026</div>
-                <h2 class="blog-title">Aunt Bobbie</h2>
-                <a href="blog/aunt-bobbie.html" class="read-more">Read More</a>
+        <div class="blog-list" id="blogList">
+            <article class="blog-article" data-publish-date="2025-11-24T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">November 24, 2025</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/aunt-bobbie.html">
+                    <h2 class="blog-title">Aunt Bobbie</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">January 13, 2026</div>
-                <h2 class="blog-title">A Christmas Wish</h2>
-                <a href="blog/a-christmas-wish.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2025-12-22T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">December 22, 2025</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/a-christmas-wish.html">
+                    <h2 class="blog-title">A Christmas Wish</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">January 20, 2026</div>
-                <h2 class="blog-title">What Could You Do That You WOULD Do?</h2>
-                <a href="blog/what-could-you-do-that-you-would-do.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-01-05T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">January 05, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/what-could-you-do-that-you-would-do.html">
+                    <h2 class="blog-title">What Could You Do That You WOULD Do?</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">January 27, 2026</div>
-                <h2 class="blog-title">Make an Impact</h2>
-                <a href="blog/make-an-impact.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-01-12T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">January 12, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/make-an-impact.html">
+                    <h2 class="blog-title">Make an Impact</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">February 03, 2026</div>
-                <h2 class="blog-title">The Power of Community...</h2>
-                <a href="blog/the-power-of-community.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-01-19T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">January 19, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-community.html">
+                    <h2 class="blog-title">The Power of Community...</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">February 10, 2026</div>
-                <h2 class="blog-title">The Power of Creativity</h2>
-                <a href="blog/the-power-of-creativity.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-01-26T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">January 26, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-creativity.html">
+                    <h2 class="blog-title">The Power of Creativity</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">February 17, 2026</div>
-                <h2 class="blog-title">The Power of Failure…Or…The Upside of Quitting</h2>
-                <a href="blog/the-power-of-failureorthe-upside-of-quitting.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-02-02T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">February 02, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-failureorthe-upside-of-quitting.html">
+                    <h2 class="blog-title">The Power of Failure…Or…The Upside of Quitting</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">February 24, 2026</div>
-                <h2 class="blog-title">The Power of Family...</h2>
-                <a href="blog/the-power-of-family.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-02-09T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">February 09, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-family.html">
+                    <h2 class="blog-title">The Power of Family...</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">March 03, 2026</div>
-                <h2 class="blog-title">The Power of Love</h2>
-                <a href="blog/the-power-of-love.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-02-16T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">February 16, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-love.html">
+                    <h2 class="blog-title">The Power of Love</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">March 10, 2026</div>
-                <h2 class="blog-title">The Power of Love pt. 2</h2>
-                <a href="blog/the-power-of-love-pt-2.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-02-23T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">February 23, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-love-pt-2.html">
+                    <h2 class="blog-title">The Power of Love pt. 2</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">March 17, 2026</div>
-                <h2 class="blog-title">The Power of Optimism</h2>
-                <a href="blog/the-power-of-optimism.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-03-02T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">March 02, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-optimism.html">
+                    <h2 class="blog-title">The Power of Optimism</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">March 24, 2026</div>
-                <h2 class="blog-title">The Power of Order AND Chaos</h2>
-                <a href="blog/the-power-of-order-and-chaos.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-03-09T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">March 09, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-order-and-chaos.html">
+                    <h2 class="blog-title">The Power of Order AND Chaos</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">March 31, 2026</div>
-                <h2 class="blog-title">The Power of Perception</h2>
-                <a href="blog/the-power-of-perception.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-03-16T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">March 16, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-perception.html">
+                    <h2 class="blog-title">The Power of Perception</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">April 07, 2026</div>
-                <h2 class="blog-title">The Power of Perspective</h2>
-                <a href="blog/the-power-of-perspective.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-03-23T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">March 23, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-perspective.html">
+                    <h2 class="blog-title">The Power of Perspective</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">April 14, 2026</div>
-                <h2 class="blog-title">The Power of Potential</h2>
-                <a href="blog/the-power-of-potential.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-03-30T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">March 30, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-potential.html">
+                    <h2 class="blog-title">The Power of Potential</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">April 21, 2026</div>
-                <h2 class="blog-title">The Power of Preparation...</h2>
-                <a href="blog/the-power-of-preparation.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-04-06T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">April 06, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-preparation.html">
+                    <h2 class="blog-title">The Power of Preparation...</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">April 28, 2026</div>
-                <h2 class="blog-title">The Power of Preparation…Part 2</h2>
-                <a href="blog/the-power-of-preparationpart-2.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-04-13T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">April 13, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-preparationpart-2.html">
+                    <h2 class="blog-title">The Power of Preparation…Part 2</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">May 05, 2026</div>
-                <h2 class="blog-title">The Power of Responsibility</h2>
-                <a href="blog/the-power-of-responsibility.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-04-20T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">April 20, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-responsibility.html">
+                    <h2 class="blog-title">The Power of Responsibility</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">May 12, 2026</div>
-                <h2 class="blog-title">The Power of Service</h2>
-                <a href="blog/the-power-of-service.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-04-27T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">April 27, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-service.html">
+                    <h2 class="blog-title">The Power of Service</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">May 19, 2026</div>
-                <h2 class="blog-title">The Power of Service to Others</h2>
-                <a href="blog/the-power-of-service-to-others.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-05-04T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">May 04, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-service-to-others.html">
+                    <h2 class="blog-title">The Power of Service to Others</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">May 26, 2026</div>
-                <h2 class="blog-title">The Power of Simplicity</h2>
-                <a href="blog/the-power-of-simplicity.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-05-11T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">May 11, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-simplicity.html">
+                    <h2 class="blog-title">The Power of Simplicity</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">June 02, 2026</div>
-                <h2 class="blog-title">The Power of Smiling</h2>
-                <a href="blog/the-power-of-smiling.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-05-18T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">May 18, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-smiling.html">
+                    <h2 class="blog-title">The Power of Smiling</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">June 09, 2026</div>
-                <h2 class="blog-title">The Power of Stories and Images</h2>
-                <a href="blog/the-power-of-stories-and-images.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-05-25T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">May 25, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-stories-and-images.html">
+                    <h2 class="blog-title">The Power of Stories and Images</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">June 16, 2026</div>
-                <h2 class="blog-title">The Power of Symbols</h2>
-                <a href="blog/the-power-of-symbols.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-06-01T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">June 01, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-symbols.html">
+                    <h2 class="blog-title">The Power of Symbols</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">June 23, 2026</div>
-                <h2 class="blog-title">The Power of Tenacity</h2>
-                <a href="blog/the-power-of-tenacity.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-06-08T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">June 08, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-tenacity.html">
+                    <h2 class="blog-title">The Power of Tenacity</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">June 30, 2026</div>
-                <h2 class="blog-title">The Power of Thanksgiving</h2>
-                <a href="blog/the-power-of-thanksgiving.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-06-15T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">June 15, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-thanksgiving.html">
+                    <h2 class="blog-title">The Power of Thanksgiving</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">July 07, 2026</div>
-                <h2 class="blog-title">The Power of Tradition</h2>
-                <a href="blog/the-power-of-tradition.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-06-22T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">June 22, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-tradition.html">
+                    <h2 class="blog-title">The Power of Tradition</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">July 14, 2026</div>
-                <h2 class="blog-title">The Power of Transformations</h2>
-                <a href="blog/the-power-of-transformations.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-06-29T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">June 29, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-transformations.html">
+                    <h2 class="blog-title">The Power of Transformations</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">July 21, 2026</div>
-                <h2 class="blog-title">The Power of Trust</h2>
-                <a href="blog/the-power-of-trust.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-07-06T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">July 06, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-trust.html">
+                    <h2 class="blog-title">The Power of Trust</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">July 28, 2026</div>
-                <h2 class="blog-title">The Power of Understanding</h2>
-                <a href="blog/the-power-of-understanding.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-07-13T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">July 13, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-understanding.html">
+                    <h2 class="blog-title">The Power of Understanding</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">August 04, 2026</div>
-                <h2 class="blog-title">The Power of Understanding Yourself</h2>
-                <a href="blog/the-power-of-understanding-yourself.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-07-20T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">July 20, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-understanding-yourself.html">
+                    <h2 class="blog-title">The Power of Understanding Yourself</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
-            <article class="blog-card">
-                <div class="blog-date">August 11, 2026</div>
-                <h2 class="blog-title">The Power of Words</h2>
-                <a href="blog/the-power-of-words.html" class="read-more">Read More</a>
+            <article class="blog-article" data-publish-date="2026-07-27T00:00:00">
+                <div class="blog-meta">
+                    <span class="blog-date">July 27, 2026</span>
+                    <div class="blog-divider"></div>
+                </div>
+                <a href="blog/the-power-of-words.html">
+                    <h2 class="blog-title">The Power of Words</h2>
+                    <span class="read-more">Read Article</span>
+                </a>
             </article>
             
+        </div>
+        
+        <!-- Message when no posts are available -->
+        <div class="no-posts" id="noPosts" style="display: none;">
+            <h2>Coming Soon</h2>
+            <p>New reflections will be published weekly. Check back soon!</p>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved. | <a href="blog/index.html">Return to Home</a></p>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved. | <a href="index.html">Return to Home</a></p>
     </footer>
+
+    <!-- Date Filtering Script -->
+    <script>
+        // Only show blog posts that have been published (date <= today)
+        function filterBlogPosts() {
+            const now = new Date();
+            const articles = document.querySelectorAll('.blog-article');
+            let visibleCount = 0;
+            
+            articles.forEach(article => {
+                const publishDate = new Date(article.getAttribute('data-publish-date'));
+                
+                if (publishDate <= now) {
+                    article.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+            
+            // Show "no posts" message if nothing is published yet
+            const noPosts = document.getElementById('noPosts');
+            const blogList = document.getElementById('blogList');
+            
+            if (visibleCount === 0) {
+                blogList.style.display = 'none';
+                noPosts.style.display = 'block';
+            } else {
+                blogList.style.display = 'flex';
+                noPosts.style.display = 'none';
+            }
+        }
+        
+        // Run on page load
+        filterBlogPosts();
+    </script>
 </body>
 </html>
