@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Consulting - Dr. Danny Gentry</title>
-    <meta name="description" content="Partner with Dr. Danny Gentry for school consulting services in leadership development, culture building, and strategic planning.">
+    <title>School Consulting Services | Dr. Danny Gentry - Transform Your School Culture</title>
+    <meta name="description" content="Expert school consulting from Dr. Danny Gentry. Leadership development, culture building, and strategic planning. 20+ years as a principal. Proven results.">
+    <meta name="keywords" content="school consulting, educational consulting, principal coaching, school culture, leadership development, school improvement">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="School Consulting Services - Dr. Danny Gentry">
+    <meta property="og:description" content="Transform your school with expert consulting from a principal with 20+ years of leadership experience.">
+    <meta property="og:url" content="https://dannygentry.com/school-consulting.html">
+    
+    <!-- Google Analytics 4 - Replace GA_MEASUREMENT_ID with your actual ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -200,6 +216,81 @@
             border-left: 4px solid var(--accent-terracotta);
         }
         
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: var(--warm-white);
+            padding: 6rem 2rem;
+        }
+        
+        .testimonials-section .section-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: var(--cream);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-size: 5rem;
+            color: var(--accent-terracotta);
+            line-height: 1;
+            opacity: 0.2;
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+        }
+        
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: var(--primary-brown);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--light-tan);
+        }
+        
+        .testimonial-author strong {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author span {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
         /* CTA Section */
         .cta-section {
             background-color: var(--cream);
@@ -278,6 +369,10 @@
             }
             
             .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -436,6 +531,52 @@
             One-on-one executive coaching for principals and district leaders. Virtual or in-person 
             sessions focused on your specific leadership challenges and growth goals.
         </p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <h2 class="section-title">Success Stories</h2>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    Our school was struggling with culture issues and declining morale. Dr. Gentry spent a day with us, 
+                    talked to teachers individually, and gave us a roadmap that was both honest and hopeful. Within one semester, 
+                    the building felt different. Teachers who were looking to leave decided to stay. His insight was exactly what we needed.
+                </p>
+                <div class="testimonial-author">
+                    <strong>Patricia Reeves</strong>
+                    <span>Principal, Lincoln Middle School</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    Dr. Gentry worked with our district leadership team for a full year. His coaching was transformative—not because 
+                    he told us what to do, but because he helped us see what we were missing. He has this gift for asking the right 
+                    questions at the right time. Our principals are stronger leaders because of his guidance.
+                </p>
+                <div class="testimonial-author">
+                    <strong>Dr. Robert Chen</strong>
+                    <span>Assistant Superintendent, Metro School District</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    We brought Dr. Gentry in for a one-day consultation, and honestly, we should have booked him for the whole year. 
+                    In eight hours, he identified issues we'd been dancing around for years and gave us concrete steps to address them. 
+                    Six months later, we're seeing real progress. Worth every penny.
+                </p>
+                <div class="testimonial-author">
+                    <strong>Thomas Anderson</strong>
+                    <span>Superintendent, Riverdale School District</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- CTA -->

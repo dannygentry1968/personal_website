@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Great Principals Actually Do Differently - Dr. Danny Gentry</title>
+    <meta name="description" content="After two decades as a principal, Dr. Danny Gentry reveals what separates truly great school leaders from the rest—and why it has nothing to do with what you learned in your Ed.D. program.">
+    <meta name="keywords" content="school leadership, principal leadership, educational leadership, school culture, effective principals, school administration">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What Great Principals Actually Do Differently">
+    <meta property="og:description" content="The untaught lessons of school leadership that separate great principals from the rest.">
+    <meta property="og:url" content="https://dannygentry.com/blog/great-principals.html">
+    <meta property="og:site_name" content="Dr. Danny Gentry">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        :root {
+            --primary-dark: #2C1810;
+            --primary-brown: #5C3D2E;
+            --accent-terracotta: #C85C3C;
+            --accent-sage: #7A9B76;
+            --cream: #F5F1E8;
+            --light-tan: #E8DCC8;
+            --warm-white: #FDFBF7;
+            
+            --font-serif: 'Crimson Text', serif;
+            --font-sans: 'Manrope', sans-serif;
+            
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--primary-dark);
+            background-color: var(--warm-white);
+            line-height: 1.8;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(92, 61, 46, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-terracotta);
+        }
+        
+        /* Article */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .article-date {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-excerpt {
+            font-size: 1.3rem;
+            color: var(--primary-brown);
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--primary-brown);
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            font-family: var(--font-serif);
+            float: left;
+            line-height: 1;
+            margin: 0.1rem 0.1rem 0 0;
+            color: var(--accent-terracotta);
+        }
+        
+        .article-content h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-content h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid var(--accent-terracotta);
+            padding-left: 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--primary-brown);
+        }
+        
+        .article-content ul {
+            margin: 1.5rem 0 1.5rem 2rem;
+        }
+        
+        .article-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Newsletter Signup */
+        .newsletter-signup {
+            background: linear-gradient(135deg, var(--primary-brown) 0%, var(--primary-dark) 100%);
+            color: var(--cream);
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .newsletter-signup h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-signup p {
+            font-size: 1.1rem;
+            color: var(--light-tan);
+            margin-bottom: 2rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--cream);
+            border-radius: 50px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .newsletter-form button {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            border: none;
+            background-color: var(--accent-terracotta);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-family: var(--font-sans);
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* CTA Box */
+        .cta-box {
+            background-color: var(--cream);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            border-left: 4px solid var(--accent-sage);
+        }
+        
+        .cta-box h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-box .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .cta-box .btn:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        .back-to-blog {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .back-to-blog a {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-terracotta);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        
+        .back-to-blog a:hover {
+            background-color: #B54D2F;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-tan);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+            }
+        }
+    </style>
+    
+    <!-- Google Analytics 4 - Replace GA_MEASUREMENT_ID with your actual ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Dr. Danny Gentry</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#books">Books</a></li>
+                <li><a href="../reflections.html">Reflections</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-date">March 10, 2026</div>
+            <h1 class="article-title">What Great Principals Actually Do Differently</h1>
+            <p class="article-excerpt">
+                After two decades as a principal and hundreds of school visits, I can tell you this: 
+                The best school leaders don't do what the textbooks teach. They do something completely different.
+            </p>
+        </header>
+        
+        <div class="article-content">
+            <p>On my first day as a principal, I sat in my new office—a space that still smelled faintly of the previous principal's coffee—and opened the three-ring binder from my graduate program. "Instructional Leadership in the 21st Century." I'd earned an A in that class.</p>
+
+            <p>By lunch, I realized the binder was worthless.</p>
+
+            <p>Not because the information was wrong, exactly. But because nobody had told me that the actual job of being a principal bears almost no resemblance to what they teach you in Ed.D. programs. Nobody mentioned that I'd spend my first morning mediating a fight between two third-graders over who got to use the blue crayon, covering a class because a substitute didn't show up, and explaining to an angry parent why her son couldn't bring his pet ferret to show-and-tell.</p>
+
+            <p>That was twenty years ago. Since then, I've led three different schools, consulted with dozens more, and had countless conversations with principals across the country. And I've noticed something: The principals who transform schools—the ones teachers fight to work for, the ones where waitlists grow and culture thrives—don't follow the playbook.</p>
+
+            <p>They do something else entirely.</p>
+
+            <h2>The Principal Nobody Taught Me to Be</h2>
+
+            <p>Let me tell you about Mrs. Henderson. She was my principal when I was a fourth-grade teacher, fresh out of college and drowning in lesson plans. I was convinced I was failing. Every day felt like barely controlled chaos. I was sure she'd called me in to tell me I wasn't cut out for teaching.</p>
+
+            <p>Instead, she said: "I watched you yesterday during math. When Tommy said 7 times 8 was 54, you didn't correct him right away. You asked him to show his thinking. And when he worked through it and caught his own mistake, I saw his face light up. That's teaching."</p>
+
+            <p>Then she handed me her personal copy of a book on math manipulatives and left.</p>
+
+            <p>That was it. No formal evaluation. No improvement plan. No scripted feedback form with check boxes. Just specific, genuine observation, followed by exactly the support I needed.</p>
+
+            <p>Looking back, I realize Mrs. Henderson did something that great principals do instinctively: She saw me. Not my test scores. Not my compliance with district initiatives. Me. The actual human being trying to figure out how to teach.</p>
+
+            <h2>The Five Things Great Principals Do That No One Teaches</h2>
+
+            <h3>1. They Protect Their Teachers from the Nonsense</h3>
+
+            <p>Here's a secret: Districts generate an endless stream of initiatives, mandates, forms, and requirements. Most of it is performative bureaucracy designed to make adults feel like they're doing something important.</p>
+
+            <p>Average principals pass all of it down to teachers. "Central office says we need to implement the new XYZ framework, so here's a three-hour training on Friday."</p>
+
+            <p>Great principals filter. They ask hard questions: "Will this actually help students? Is this worth taking time away from planning? Can I make this go away or minimize its impact?"</p>
+
+            <p>When I was principal at Houston Creek Elementary, the district mandated a new observation protocol that required teachers to print out 47-point rubrics for every lesson. I read through it and realized it was insane. So I told my teachers: "I'm required to use this form. You're not required to look at it. I'll fill it out in a way that documents what I need to document. You focus on teaching."</p>
+
+            <p>Did I get pushback from downtown? Absolutely. Did I care? Absolutely not. My job was to protect my teachers so they could do their jobs.</p>
+
+            <h3>2. They Know Everyone's Name—and Everyone's Story</h3>
+
+            <p>I once worked with a principal who could walk through the cafeteria and greet every student by name. All 487 of them. But more than that, he knew things. He knew that Marcus's grandmother had just moved in because mom was struggling. He knew that Sofia had just started taking piano lessons and was excited about her recital. He knew that the kid sitting alone in the corner wasn't being antisocial—he was overwhelmed by noise and needed quiet time to reset.</p>
+
+            <p>This wasn't a parlor trick. This was leadership.</p>
+
+            <p>Because when you know people—really know them—you make different decisions. You don't implement a rigid "no exceptions" tardy policy when you know that three of your students are responsible for getting younger siblings ready for school. You don't launch a parent engagement initiative without considering that 40% of your families are working two jobs and can't make a 6 PM meeting.</p>
+
+            <p>Great principals don't manage demographics. They lead humans. And you can't lead people you don't know.</p>
+
+            <h3>3. They Say No—A Lot</h3>
+
+            <p>The best principal I ever observed had a phrase she used constantly: "That's interesting, but it's not our work right now."</p>
+
+            <p>A vendor wanted to demo new reading software? "That's interesting, but it's not our work right now."</p>
+
+            <p>The PTA proposed a elaborate fundraiser that would require significant teacher involvement? "That's interesting, but it's not our work right now."</p>
+
+            <p>A central office coordinator suggested adding another data meeting? "That's interesting, but it's not our work right now."</p>
+
+            <p>She wasn't being dismissive. She was being focused. She'd worked with her staff to identify three clear priorities for the year, and she protected those priorities fiercely. Everything else—no matter how shiny or well-intentioned—was a distraction.</p>
+
+            <p>Average principals try to do everything. Great principals do a few things exceptionally well.</p>
+
+            <h3>4. They Make Themselves Unnecessary</h3>
+
+            <p>This sounds counterintuitive, but stay with me.</p>
+
+            <p>Average principals believe their job is to be indispensable. They're the person who has to approve everything, know everything, make every decision. The school can't function without them.</p>
+
+            <p>Great principals work themselves out of a job. They build systems, develop leaders, and distribute authority. They hire great people and then get out of their way. They create a culture where teachers solve problems without needing administrative intervention.</p>
+
+            <p>In my last year as principal, I could miss three days for a conference and return to find the school had run better without me. Not because I was a bad principal, but because I'd been a good one. I'd built a leadership team that didn't need me to micromanage. I'd created structures that worked independently of my presence.</p>
+
+            <p>That's the goal. If your school falls apart when you're absent, you haven't built a great school. You've built a house of cards with yourself at the foundation.</p>
+
+            <h3>5. They Have the Courage to Tell the Truth</h3>
+
+            <p>This is the big one. The one that separates good principals from great ones.</p>
+
+            <p>Great principals tell the truth, even when it's uncomfortable. Especially when it's uncomfortable.</p>
+
+            <p>They tell the superintendent that the new curriculum isn't working and here's the data to prove it.</p>
+
+            <p>They tell the teacher who's struggling that yes, this is hard, and yes, we need to see improvement, and yes, I'm going to help you get there.</p>
+
+            <p>They tell parents that no, we're not going to change the policy because you're unhappy, and here's why.</p>
+
+            <p>They tell their staff when they've made a mistake. "I pushed too hard on that initiative. I should have listened to your concerns. Here's what I'm going to do differently."</p>
+
+            <p>Most principals spend enormous energy managing perception. Great principals spend that energy pursuing truth. And that makes all the difference.</p>
+
+            <h2>What They Don't Tell You in Ed.D. Programs</h2>
+
+            <p>Here's what I wish someone had told me before I became a principal:</p>
+
+            <p><strong>You can't please everyone.</strong> Stop trying. Make decisions based on what's best for students and teachers, not what will make you most popular.</p>
+
+            <p><strong>Your calendar is your integrity.</strong> How you spend your time reveals what you actually value. If you say teachers are your priority but you're never in classrooms, you're lying—to them and to yourself.</p>
+
+            <p><strong>Culture eats strategy for breakfast.</strong> You can have the best improvement plan in the district, but if your culture is toxic, nothing else matters. Build trust first. Everything else second.</p>
+
+            <p><strong>The work is never done.</strong> There will always be more emails, more problems, more initiatives. If you wait until everything is finished to go home, you'll never leave. Set boundaries. Model sustainability.</p>
+
+            <p><strong>You will make mistakes.</strong> Big ones. The question isn't whether you'll screw up—it's what you'll do after. Own it. Learn from it. Move forward.</p>
+
+            <h2>The Meeting That Changed Everything</h2>
+
+            <p>About five years into my first principalship, I was struggling. Test scores were flat. Teacher morale was low. I felt like I was working 70-hour weeks and getting nowhere.</p>
+
+            <p>I scheduled a meeting with a retired principal I respected, hoping for advice on instructional strategies or leadership frameworks or intervention programs.</p>
+
+            <p>Instead, he asked me one question: "When's the last time you sat in the teacher's lounge and just listened?"</p>
+
+            <p>I didn't have an answer. I was too busy being important in my office.</p>
+
+            <p>"Go sit in the lounge," he said. "Don't fix anything. Don't solve anything. Just listen. Do that for a month. Then come back and we'll talk."</p>
+
+            <p>It felt like the stupidest advice I'd ever received. But I was desperate enough to try it.</p>
+
+            <p>So I started eating lunch in the lounge. I didn't talk much. I just listened. And what I heard changed everything.</p>
+
+            <p>I heard that teachers felt disconnected from decision-making. I heard that the new math program was confusing but no one wanted to say anything because I'd been so enthusiastic about it. I heard that the real leaders in the building weren't the people with titles—they were the veteran teachers everyone else turned to for advice.</p>
+
+            <p>Within two months, I'd restructured our leadership team, scrapped two initiatives that weren't working, and started involving teachers in decisions I used to make alone.</p>
+
+            <p>Test scores went up. But more importantly, teachers stopped leaving. The building felt different. Lighter. More alive.</p>
+
+            <p>All because I stopped trying to be the smartest person in the room and started trying to be the best listener.</p>
+
+            <h2>The Choice Every Principal Makes</h2>
+
+            <p>Here's the truth: You can be a good principal by following the playbook. Show up. Do the observations. Implement the initiatives. Keep your boss happy. You'll survive. You might even get promoted.</p>
+
+            <p>But if you want to be great—if you want to build a school where teachers stay and students thrive and parents fight to enroll—you have to make different choices.</p>
+
+            <p>You have to choose people over paperwork.</p>
+
+            <p>You have to choose truth over comfort.</p>
+
+            <p>You have to choose protecting your teachers over pleasing your boss.</p>
+
+            <p>You have to choose becoming unnecessary over being indispensable.</p>
+
+            <p>None of this is easy. Nobody teaches you how to do it in graduate school. You won't find it in a rubric or a framework or a strategic plan.</p>
+
+            <p>But it's the work that matters.</p>
+
+            <p>And it's the work that changes everything.</p>
+        </div>
+
+        <!-- CTA Box for Books -->
+        <div class="cta-box">
+            <h3>Want to Lead Differently?</h3>
+            <p>In <em>The Collapse: How America Abandoned Its Teachers—and What Comes Next</em>, I dive deep into what it actually takes to lead schools in this moment. Not theory. Not buzzwords. The real work of building schools where teachers want to stay and students can thrive.</p>
+            <a href="../index.html#books" class="btn">Explore My Books →</a>
+        </div>
+        
+        <!-- Newsletter Signup -->
+        <div class="newsletter-signup">
+            <h3>Get Weekly Leadership Insights</h3>
+            <p>Join thousands of school leaders receiving honest, practical guidance on leading schools that actually work. Real talk about the challenges nobody else wants to discuss.</p>
+            <form class="newsletter-form" action="#" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        
+        <div class="back-to-blog">
+            <a href="../reflections.html">← Back to All Reflections</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dr. Danny Gentry. All rights reserved. | <a href="../index.html">Home</a></p>
+    </footer>
+
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "What Great Principals Actually Do Differently",
+        "description": "After two decades as a principal, Dr. Danny Gentry reveals what separates truly great school leaders from the rest—and why it has nothing to do with what you learned in your Ed.D. program.",
+        "author": {
+            "@type": "Person",
+            "name": "Dr. Danny Gentry",
+            "jobTitle": "Educational Leader, Author, Speaker",
+            "url": "https://dannygentry.com"
+        },
+        "datePublished": "2026-03-10",
+        "publisher": {
+            "@type": "Person",
+            "name": "Dr. Danny Gentry"
+        },
+        "keywords": "school leadership, principal leadership, educational leadership, school culture, effective principals"
+    }
+    </script>
+</body>
+</html>

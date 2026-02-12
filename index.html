@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Danny Gentry - Educator, Author, Speaker</title>
+    <title>Dr. Danny Gentry - Educator, Author, Speaker | Educational Leadership & Books</title>
     <meta name="description" content="Dr. Danny Gentry - Award-winning educator and author of The Serpent of Houston Creek, The Collapse, and The Kindness Tree. Speaking and consulting services available.">
+    <meta name="keywords" content="Danny Gentry, educational leadership, school principal, education author, keynote speaker, teacher retention, school consulting">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dr. Danny Gentry - Educator, Author, Speaker">
+    <meta property="og:description" content="Award-winning educator, author, and speaker with 30+ years of educational leadership experience.">
+    <meta property="og:url" content="https://dannygentry.com">
+    <meta property="og:site_name" content="Dr. Danny Gentry">
+    
+    <!-- Google Search Console Verification - REPLACE WITH YOUR VERIFICATION CODE -->
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -667,6 +678,70 @@
             min-height: 150px;
         }
         
+        /* Newsletter Section */
+        .newsletter-section {
+            background-color: var(--cream);
+            padding: 6rem 2rem;
+        }
+        
+        .newsletter-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .newsletter-benefits {
+            list-style: none;
+            margin-top: 2rem;
+        }
+        
+        .newsletter-benefits li {
+            padding: 0.7rem 0;
+            font-size: 1.05rem;
+            color: var(--primary-brown);
+        }
+        
+        .newsletter-form-container {
+            background-color: var(--warm-white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .newsletter-form-inline {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .newsletter-form-inline input {
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--light-tan);
+            border-radius: 8px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            background-color: var(--warm-white);
+        }
+        
+        .newsletter-form-inline input:focus {
+            outline: none;
+            border-color: var(--accent-terracotta);
+        }
+        
+        .newsletter-form-inline button {
+            width: 100%;
+        }
+        
+        .newsletter-privacy {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--primary-brown);
+            margin-top: 1rem;
+            opacity: 0.8;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--primary-dark);
@@ -766,6 +841,10 @@
             .footer-container {
                 grid-template-columns: 1fr 1fr;
             }
+            
+            .newsletter-content {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 768px) {
@@ -802,6 +881,35 @@
             }
         }
     </style>
+    
+    <!-- Google Analytics 4 - Replace GA_MEASUREMENT_ID with your actual ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dr. Danny Gentry",
+        "jobTitle": "Educational Leader, Author, Speaker",
+        "description": "Award-winning educator with over 30 years of experience in educational leadership, author of multiple books, and keynote speaker.",
+        "url": "https://dannygentry.com",
+        "sameAs": [
+            "https://www.amazon.com/stores/author/B0CQXJ8P5Q"
+        ],
+        "knowsAbout": ["Educational Leadership", "Teacher Retention", "School Administration", "Education Reform"],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Educational Consultant and Author"
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -956,6 +1064,36 @@
                             <a href="https://youtu.be/vqOij5V-e2M" target="_blank" class="trailer-link">Watch Trailer</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="newsletter-section" id="newsletter">
+        <div class="section-container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <div class="section-label">Stay Connected</div>
+                    <h2 class="section-title" style="text-align: left; color: var(--primary-dark);">Get Weekly Insights on Education Leadership</h2>
+                    <p style="font-size: 1.1rem; color: var(--primary-brown); max-width: 600px; text-align: left;">
+                        Join thousands of educators and leaders receiving honest, practical guidance every week. 
+                        No corporate edu-speak—just real talk about making schools better.
+                    </p>
+                    <ul class="newsletter-benefits">
+                        <li>✓ Weekly reflections on education leadership</li>
+                        <li>✓ Practical strategies you can implement immediately</li>
+                        <li>✓ Honest conversations about the challenges facing schools</li>
+                        <li>✓ Early access to new content and resources</li>
+                    </ul>
+                </div>
+                <div class="newsletter-form-container">
+                    <form class="newsletter-form-inline" action="#" method="POST">
+                        <input type="text" name="firstName" placeholder="First Name" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <p class="newsletter-privacy">We respect your privacy. Unsubscribe anytime.</p>
                 </div>
             </div>
         </div>

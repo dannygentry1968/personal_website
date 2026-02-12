@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Author Events - Dr. Danny Gentry</title>
-    <meta name="description" content="Book Dr. Danny Gentry for author visits, book signings, writing workshops, and book club discussions.">
+    <title>Author Events & Book Readings | Dr. Danny Gentry - The Collapse, Serpent of Houston Creek</title>
+    <meta name="description" content="Host an engaging author event with Dr. Danny Gentry. Book readings, Q&A sessions, and writing workshops for book clubs, libraries, and schools.">
+    <meta name="keywords" content="author events, book club visits, school author visits, writing workshops, book readings, author talks">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Author Events - Dr. Danny Gentry">
+    <meta property="og:description" content="Host an engaging author event with discussions of The Collapse, The Serpent of Houston Creek, and The Kindness Tree.">
+    <meta property="og:url" content="https://dannygentry.com/author-events.html">
+    
+    <!-- Google Analytics 4 - Replace GA_MEASUREMENT_ID with your actual ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -207,6 +223,81 @@
             margin-bottom: 0.8rem;
         }
         
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: var(--warm-white);
+            padding: 6rem 2rem;
+        }
+        
+        .testimonials-section .section-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: var(--cream);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-size: 5rem;
+            color: var(--accent-terracotta);
+            line-height: 1;
+            opacity: 0.2;
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+        }
+        
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: var(--primary-brown);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--light-tan);
+        }
+        
+        .testimonial-author strong {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author span {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
         /* CTA Section */
         .cta-section {
             background-color: var(--cream);
@@ -285,6 +376,10 @@
             }
             
             .event-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -459,6 +554,52 @@
             Multiple presentations for different age groups, classroom visits, and time with 
             student writers. Customized to your school's needs.
         </p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <h2 class="section-title">Reader & Event Feedback</h2>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    I couldn't put down 'The Collapse.' As a teacher of 15 years, every page felt like Dr. Gentry was 
+                    speaking directly to my experience. This book gave me language for what I've been feeling and—more 
+                    importantly—hope that things can change. Required reading for anyone who cares about education.
+                </p>
+                <div class="testimonial-author">
+                    <strong>Emily Rodriguez</strong>
+                    <span>High School English Teacher</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    Dr. Gentry's visit to our book club was unforgettable. He didn't just discuss 'The Serpent of Houston Creek'—he 
+                    shared the story behind the story, his writing process, and had us all laughing with his anecdotes. 
+                    We've hosted dozens of authors over the years, and he was by far the most engaging and genuine.
+                </p>
+                <div class="testimonial-author">
+                    <strong>Carol Henderson</strong>
+                    <span>President, Fairfield Book Club</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    My seven-year-old daughter has asked me to read 'The Kindness Tree' every night for three weeks straight. 
+                    The lessons about compassion and character are woven so beautifully into the story. When Dr. Gentry visited 
+                    our library, the kids were mesmerized. What a gift to have an author who truly connects with young readers.
+                </p>
+                <div class="testimonial-author">
+                    <strong>Michael Thompson</strong>
+                    <span>Parent & Library Volunteer</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- CTA -->

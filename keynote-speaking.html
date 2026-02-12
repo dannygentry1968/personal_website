@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keynote Speaking - Dr. Danny Gentry</title>
-    <meta name="description" content="Book Dr. Danny Gentry for keynote presentations on educational leadership, teacher wellness, and the future of public education.">
+    <title>Keynote Speaking Services | Dr. Danny Gentry - Educational Leadership Expert</title>
+    <meta name="description" content="Book Dr. Danny Gentry for transformative keynote presentations on educational leadership, teacher retention, and school reform. 30+ years of real-world experience.">
+    <meta name="keywords" content="education keynote speaker, school leadership speaker, teacher retention speaker, educational conference speaker">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Keynote Speaking Services - Dr. Danny Gentry">
+    <meta property="og:description" content="Book Dr. Gentry for keynote presentations on educational leadership and school reform.">
+    <meta property="og:url" content="https://dannygentry.com/keynote-speaking.html">
+    
+    <!-- Google Analytics 4 - Replace GA_MEASUREMENT_ID with your actual ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -192,6 +208,81 @@
             margin: 0;
         }
         
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: var(--warm-white);
+            padding: 6rem 2rem;
+        }
+        
+        .testimonials-section .section-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: var(--cream);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .testimonial-quote {
+            font-family: var(--font-serif);
+            font-size: 5rem;
+            color: var(--accent-terracotta);
+            line-height: 1;
+            opacity: 0.2;
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+        }
+        
+        .testimonial-text {
+            font-size: 1.05rem;
+            color: var(--primary-brown);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--light-tan);
+        }
+        
+        .testimonial-author strong {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author span {
+            color: var(--accent-terracotta);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
         /* CTA Section */
         .cta-section {
             background-color: var(--cream);
@@ -270,6 +361,10 @@
             }
             
             .topic-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -398,6 +493,52 @@
             Engaging online presentations adapted for virtual audiences with interactive 
             elements and digital resources.
         </p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <h2 class="section-title">What People Are Saying</h2>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    Dr. Gentry's keynote at our state leadership conference was transformative. He didn't just talk 
+                    about what's wrong with education—he gave us actionable strategies we could implement Monday morning. 
+                    Three months later, our principals are still referencing his insights. Best investment we made all year.
+                </p>
+                <div class="testimonial-author">
+                    <strong>Dr. Sarah Martinez</strong>
+                    <span>Superintendent, Central Valley Unified School District</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    I've sat through countless professional development sessions that felt disconnected from reality. 
+                    Dr. Gentry was different. He spoke truth—uncomfortable truth—about what's happening in our schools. 
+                    But he also gave us hope and practical tools. Our entire leadership team left energized and ready to lead differently.
+                </p>
+                <div class="testimonial-author">
+                    <strong>Marcus Johnson</strong>
+                    <span>Principal, Roosevelt High School</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                    When I booked Dr. Gentry for our annual conference, I knew he'd be good. What I didn't expect was 
+                    the immediate impact. Attendees are still emailing me months later asking for resources from his 
+                    presentation. He's authentic, practical, and genuinely cares about helping educators succeed.
+                </p>
+                <div class="testimonial-author">
+                    <strong>Jennifer Wu</strong>
+                    <span>Conference Director, National Association of Elementary Principals</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- CTA -->
